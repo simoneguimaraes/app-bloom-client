@@ -1,17 +1,9 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 
 :root {
   --grey: #747071;
@@ -22,3 +14,12 @@ code {
   --pink: #9E308D;
 }
 
+.logo-title{
+  font-family: 'Satisfy', cursive;
+  font-size: 90px;
+}
+
+/*
+
+font-family: 'Roboto', sans-serif;
+*/
