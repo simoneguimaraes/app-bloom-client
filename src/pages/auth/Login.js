@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
 import { AuthContext } from "../../contexts/authContext";
+import FormField from "../../components/Form/FormField";
 
 function Login(props) {
   const authContext = useContext(AuthContext);
@@ -44,11 +45,15 @@ function Login(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
-
-      <div>
+      <h2 className="text-center h4 mt-5 text-top-pag">
+        <strong>Login</strong>
+      </h2>
+      <div
+        className="width-form d-flex flex-column"
+        style={{ minWidth: "60%" }}
+      >
         <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
+        <FormField
           type="email"
           name="email"
           id="signupFormEmail"
@@ -60,7 +65,7 @@ function Login(props) {
 
       <div>
         <label htmlFor="signupFormPassword">Password</label>
-        <input
+        <FormField
           type="password"
           name="password"
           id="signupFormPassword"
@@ -70,10 +75,16 @@ function Login(props) {
         />
       </div>
 
-      <div>
-        <button type="submit">Login!</button>
+      <div></div>
 
-        <Link to="/signup">Don't have an account? Click here to signup!</Link>
+      <div className="width-max btn-container mb-3">
+        <button className="btn-green btn-middle" type="submit">
+          Entrar
+        </button>
+      </div>
+      <div className="cadastro">
+        <span>Ainda não tem uma conta? </span>
+        <Link to="/signup">Clique aqui para fazer o cadastro!</Link>
       </div>
     </form>
   );

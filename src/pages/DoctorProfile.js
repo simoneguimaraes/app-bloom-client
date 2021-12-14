@@ -26,7 +26,11 @@ function DoctorProfile() {
   function handleSubmit(event) {
     event.preventDefault();
     setIsSending(true);
-     {/* https://www.consultacrm.com.br/index/api */}
+
+    //criar uma condicação aqui
+    {
+      /* https://www.consultacrm.com.br/index/api */
+    }
 
     axios
       .post("http://localhost:4000", formData)
@@ -38,15 +42,11 @@ function DoctorProfile() {
         console.log(err);
         setIsSending(true);
       });
-
-
-
-
   }
 
   return (
     <div>
-      <NavBar pag="Meu Cadastro" backButton="/" />
+      <Navbar pag="Meu Cadastro" backButton="/" />
       {userCreated ? (
         <>
           <div className="btn-middle">
@@ -58,7 +58,7 @@ function DoctorProfile() {
       ) : null}
       {newRegistration ? (
         <h2 className="text-center h4 mt-5 text-top-pag">
-          <strong>Cadastro</strong>
+          <strong>Cadastro Médico</strong>
         </h2>
       ) : null}
       <div className="container-items">
@@ -68,7 +68,7 @@ function DoctorProfile() {
             style={{ maxWidth: "800px" }}
           >
             <div className="w-100 m-auto d-flex justify-content-center">
-              <Form
+              <DoctorForm
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 formData={formData}
@@ -80,7 +80,7 @@ function DoctorProfile() {
           </div>
         ) : (
           <div className="d-flex flex-column justify-content-center mt-4">
-            <div>
+            <div className="btn-container">
               <button
                 className="btn-green"
                 onClick={() => setNewRegistration(true)}
@@ -88,9 +88,9 @@ function DoctorProfile() {
                 Criar nova conta
               </button>
             </div>
-            <div className="btn-middle">
+            <div className="btn-container">
               <Link to="/editar-cadastro">
-                <button className="btn-dark">Editar conta</button>
+                <button className="btn-green">Editar conta</button>
               </Link>
             </div>
           </div>

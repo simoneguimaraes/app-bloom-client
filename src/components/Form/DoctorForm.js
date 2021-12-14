@@ -113,8 +113,8 @@ function DoctorForm(props) {
         required={true}
       /> */}
 
-      <div className="btn-middle width-max">
-        <button className="btn-pink" disabled={props.isSending} type="submit">
+<div className="width-max btn-container">
+        <button className="btn-green btn-middle" disabled={props.isSending} type="submit">
           {props.isSending ? (
             <span role="status" aria-hidden="true"></span>
           ) : null}

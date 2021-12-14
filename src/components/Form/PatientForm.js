@@ -159,7 +159,7 @@ function PatientForm(props) {
         required={true}
       /> */}
 
-      <div className="width-max btn-container">
+      <div className="width-max container">
         <button className="btn-green btn-middle" disabled={props.isSending} type="submit">
           {props.isSending ? (
             <span role="status" aria-hidden="true"></span>

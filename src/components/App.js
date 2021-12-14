@@ -10,6 +10,7 @@ import Login from "../pages/auth/Login";
 import WelcomePage from "../pages/WelcomePage";
 import Navbar from "../components/Navbar/Navbar";
 import PatientProfile from "../pages/PatientProfile";
+import DoctorProfile from "../pages/DoctorProfile"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/patient-info" element={<PatientProfile />} />
+          <Route path="/doctor-info" element={<DoctorProfile />} />
           <Route path="/home" element={<ProtectedRoute component={Home} />} />
         </Routes>
       </div>
