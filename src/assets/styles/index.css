@@ -60,6 +60,7 @@ body {
 
 .btn-green:hover, .btn-green:focus {
   background-color: hsl(172, 100%, 35%);
+  color: black;
   cursor: pointer;
 }
 
@@ -74,6 +75,13 @@ body {
 
 svg {
   cursor: pointer;
+}
+
+/* button */
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*

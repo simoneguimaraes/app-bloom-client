@@ -10,7 +10,7 @@ function WelcomePage() {
         <img src={logoBloom} className="welcomepage-logo-img" />
       </p>
       <div className="d-flex flex-column align-items-center">
-        <Link className="btn-green" to="/auth/signup">
+        <Link className="btn-green" to="/login">
           Login
         </Link>
       </div>
