@@ -58,7 +58,7 @@ function DoctorProfile() {
       ) : null}
       {newRegistration ? (
         <h2 className="text-center h4 mt-5 text-top-pag">
-          <strong>Cadastro Médico</strong>
+          <strong>Sobre o especialista</strong>
         </h2>
       ) : null}
       <div className="container-items">

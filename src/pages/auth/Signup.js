@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
+import FormField from "../../components/Form/FormField";
+import "../../assets/styles/index.css";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -38,11 +40,16 @@ function Signup(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Signup!</h1>
+      <h2 className="text-center h4 mt-4 text-top-pag">
+        <strong>Cadastro</strong>
+      </h2>
 
-      <div>
-        <label htmlFor="signupFormName">Name</label>
-        <input
+      <div
+        className="container mt-3 resg-pag-container"
+        style={{ maxWidth: "800px" }}
+      >
+        <label htmlFor="signupFormName">Nome</label>
+        <FormField
           type="text"
           name="name"
           id="signupFormName"
@@ -50,11 +57,9 @@ function Signup(props) {
           error={errors.name}
           onChange={handleChange}
         />
-      </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
+        <label htmlFor="signupFormEmail">E-mail</label>
+        <FormField
           type="email"
           name="email"
           id="signupFormEmail"
@@ -62,11 +67,9 @@ function Signup(props) {
           error={errors.email}
           onChange={handleChange}
         />
-      </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
+        <label htmlFor="signupFormPassword">Senha</label>
+        <FormField
           type="password"
           name="password"
           id="signupFormPassword"
@@ -76,10 +79,14 @@ function Signup(props) {
         />
       </div>
 
-      <div>
-        <button type="submit">Signup!</button>
-
-        <Link to="/login">Already have an account? Click here to login.</Link>
+      <div className="width-max btn-container mb-3">
+        <button className="btn-green btn-middle mt-3" type="submit">
+          Cadastrar
+        </button>
+      </div>
+      <div className="cadastro">
+        <span>Já possui uma conta? </span>
+        <Link to="/login">Clique aqui para fazer login!</Link>
       </div>
     </form>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
-
+import "../../assets/styles/index.css";
 import { AuthContext } from "../../contexts/authContext";
 import FormField from "../../components/Form/FormField";
 
@@ -45,14 +45,14 @@ function Login(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="text-center h4 mt-5 text-top-pag">
+      <h2 className="text-center h4 mt-4 text-top-pag">
         <strong>Login</strong>
       </h2>
       <div
-        className="width-form d-flex flex-column"
-        style={{ minWidth: "60%" }}
+        className="container mt-3 resg-pag-container"
+        style={{ maxWidth: "800px" }}
       >
-        <label htmlFor="signupFormEmail">E-mail Address</label>
+        <label htmlFor="signupFormEmail">E-mail</label>
         <FormField
           type="email"
           name="email"
@@ -61,10 +61,7 @@ function Login(props) {
           error={errors.email}
           onChange={handleChange}
         />
-      </div>
-
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
+        <label htmlFor="signupFormPassword">Senha</label>
         <FormField
           type="password"
           name="password"
@@ -75,10 +72,8 @@ function Login(props) {
         />
       </div>
 
-      <div></div>
-
       <div className="width-max btn-container mb-3">
-        <button className="btn-green btn-middle" type="submit">
+        <button className="btn-green btn-middle mt-3" type="submit">
           Entrar
         </button>
       </div>
