@@ -35,7 +35,7 @@ body {
 
 .welcomepage-container {
   background-color: hsl(0, 27%, 93%);
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +65,7 @@ body {
 
 /* navbar */
 .bgColor {
-  background-color: hsl(0, 27%, 95%);
+  background-color: hsl(0, 27%, 80%);
 }
 
 .bgColorGrey {

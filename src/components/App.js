@@ -13,8 +13,8 @@ import Navbar from "../pages/Navbar";
 function App() {
   return (
     <AuthContextComponent>
-      <Navbar />
-      <div className="">
+      <div className="min-vh-100">
+        <Navbar />
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           {/* <Route path="/" element={<ProtectedRoute component={Home} />} /> */}
