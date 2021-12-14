@@ -18,6 +18,8 @@ body {
   --pink: #9E308D;
 }
 
+/* welcome page */
+
 .logo-title{
   font-family: 'Satisfy', cursive;
   font-size: 120px;
@@ -33,19 +35,21 @@ body {
 
 .welcomepage-container {
   background-color: hsl(0, 27%, 93%);
-  height: 88vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+/* buttons */
+
 .btn-green {
   background-color: hsl(172, 100%, 25%);
   box-shadow: 0 0 5px 0 #4d4c4c;
   color: white;
   padding: .5em;
-  width: 200px;
+  width: 180px;
   font-weight: 700;
   font-family: inherit;
   border-radius: 5px;
@@ -58,6 +62,20 @@ body {
   background-color: hsl(172, 100%, 35%);
   cursor: pointer;
 }
+
+/* navbar */
+.bgColor {
+  background-color: hsl(0, 27%, 80%);
+}
+
+.bgColorGrey {
+  background-color: rgba(56, 56, 56, 0.198);
+}
+
+svg {
+  cursor: pointer;
+}
+
 /*
 
 font-family: 'Roboto', sans-serif;
