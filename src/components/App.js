@@ -8,7 +8,9 @@ import Home from "../pages/Home";
 import Signup from "../pages/auth/Signup";
 import Login from "../pages/auth/Login";
 import WelcomePage from "../pages/WelcomePage";
-import Navbar from "../pages/Navbar";
+import Navbar from "../components/Navbar/Navbar";
+import PatientProfile from "../pages/PatientProfile";
+import DoctorProfile from "../pages/DoctorProfile"
 
 function App() {
   return (
@@ -17,9 +19,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          {/* <Route path="/" element={<ProtectedRoute component={Home} />} /> */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/patient-info" element={<PatientProfile />} />
+          <Route path="/doctor-info" element={<DoctorProfile />} />
+          <Route path="/home" element={<ProtectedRoute component={Home} />} />
         </Routes>
       </div>
     </AuthContextComponent>

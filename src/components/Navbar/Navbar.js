@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { AuthContext } from "../contexts/authContext";
-import "../assets/styles/index.css"
+import { AuthContext } from "../../contexts/authContext";
+import "../../assets/styles/index.css";
 
 function Navbar(props) {
   const [userName, setUserName] = useState("");
@@ -19,7 +19,7 @@ function Navbar(props) {
   }, [storedUser, params]);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bgColor" >
+    <nav className="navbar navbar-expand-lg navbar-light bgColor">
       <div className="container-fluid">
         <h2
           className={`${
