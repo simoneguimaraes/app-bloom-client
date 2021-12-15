@@ -5,23 +5,16 @@ import axios from "axios";
 import Navbar from "../components/Navbar/Navbar";
 import DoctorForm from "../components/Form/DoctorForm";
 
-function DoctorProfile() {
+function DoctorProfile(props) {
   const [userCreated, setUserCreated] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [newRegistration, setNewRegistration] = useState(false);
-  const [formData, setFormData] = useState({
-    specialty: "",
-    crmDoctor: 0,
-    prescription: "",
-    streetAddress: "",
-    city: "",
-    state: "",
-    phoneNumber: "",
-    tags: [],
-  });
 
   function handleChange(event) {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    props.doctorFormInfoSetState({
+      ...props.doctorFormInfo,
+      [event.target.name]: event.target.value,
+    });
   }
   function handleSubmit(event) {
     event.preventDefault();
@@ -33,7 +26,7 @@ function DoctorProfile() {
     }
 
     axios
-      .post("http://localhost:4000", formData)
+      .post("http://localhost:4000", props.doctorFormInfo)
       .then(() => {
         setUserCreated(true);
         setIsSending(true);
@@ -46,7 +39,6 @@ function DoctorProfile() {
 
   return (
     <div>
-      <Navbar pag="Meu Cadastro" backButton="/" />
       {userCreated ? (
         <>
           <div className="btn-middle">
@@ -58,7 +50,7 @@ function DoctorProfile() {
       ) : null}
       {newRegistration ? (
         <h2 className="text-center h4 mt-5 text-top-pag">
-          <strong>Cadastro Médico</strong>
+          <strong>Sobre o especialista</strong>
         </h2>
       ) : null}
       <div className="container-items">
@@ -71,8 +63,8 @@ function DoctorProfile() {
               <DoctorForm
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
-                formData={formData}
-                setFormData={setFormData}
+                doctorFormInfo={props.doctorFormInfo}
+                doctorFormInfoSetState={props.doctorFormInfoSetState}
                 isSending={isSending}
                 textBtn="Cadastrar"
               />

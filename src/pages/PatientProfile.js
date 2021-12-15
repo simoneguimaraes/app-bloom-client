@@ -43,7 +43,6 @@ function PatientProfile() {
 
   return (
     <div>
-      <Navbar pag="Meu Cadastro" backButton="/" />
       {userCreated ? (
         <>
           <div className="btn-middle">
@@ -77,7 +76,7 @@ function PatientProfile() {
           </div>
         ) : (
           <div className="d-flex flex-column justify-content-center mt-4">
-            <div className="btn-container" >
+            <div className="btn-container">
               <button
                 className="btn-green"
                 onClick={() => setNewRegistration(true)}

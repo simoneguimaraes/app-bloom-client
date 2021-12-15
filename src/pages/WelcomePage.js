@@ -11,7 +11,7 @@ function WelcomePage() {
       </p>
       <div className="d-flex flex-column align-items-center">
         <Link className="btn-green" to="/login">
-          Login
+          Entrar
         </Link>
       </div>
     </div>
