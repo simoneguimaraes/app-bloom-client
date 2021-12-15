@@ -68,27 +68,33 @@ function ArticleForm(props) {
       className="width-form d-flex flex-column"
       style={{ minWidth: "60%" }}
     >
-      {/* Post */}
+      {/* Título do Artigo */}
       <InputTexto
-        label="Compartilhe a sua experiência..."
-        placeholder="Compartilhe a sua experiência..."
-        name="text"
+        label="Título do Artigo"
+        name="title"
         onChange={props.handleChange}
-        value={props.formData.text}
+        value={props.formData.title}
         required={true}
         maxlength="200"
-        className="input-post"
       />
 
-      {/* Picture */}
-      <FormField
-        type="file"
-        label="Compartilhar uma imagem:"
-        id="productFormPicture"
-        name="pictures"
+      {/* Autores */}
+      <InputTexto
+        label="Autores do Artigo"
+        name="authors"
         onChange={props.handleChange}
-        readOnly={props.loading}
+        value={props.formData.authors}
+        required={true}
       />
+      {/* Ano de Publicação */}
+      <InputTexto
+        label="Ano de Publicação: "
+        name="yearPublished"
+        onChange={props.handleChange}
+        value={props.formData.yearPublished}
+        required={true}
+      />
+
       {/* Link */}
       <InputTexto
         label="Compartilhar um link:"
@@ -99,7 +105,7 @@ function ArticleForm(props) {
       />
 
       {/* Tags */}
-      <p>Assunto do post:</p>
+      <p>Tema do Artigo:</p>
       <div className="forum-tags">
         {tagsArticle.map((currentTag) => {
           return (

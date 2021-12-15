@@ -17,7 +17,6 @@ function Article(props) {
     authors: "",
     yearPublished: 0,
     websiteLink: "",
-    pictures: "",
     tags: [],
   });
 
