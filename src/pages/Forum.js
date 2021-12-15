@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar/Navbar";
+import api from "../apis/api";
 
 //fórum entre todos os usuários do app
 
 function Forum(props) {
   const [loading, setLoading] = useState({});
-  
+
   const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
     text: "",
@@ -25,15 +26,26 @@ function Forum(props) {
     });
   }
 
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios.get("http://localhost:4000/api/").then(async (result) => {
+      try {
+        const response = await api.post("/forum", props.formData);
+        console.log(response);
+      } catch (err) {
+        if (err.response) {
+          console.error(err.response);
+          // setErrors({ ...err.response.data.errors });
+        }
+      }
+    });
+  }
 
   return (
     <div>
+      <h2 className="text-center h4 mt-5 text-top-pag">
+            <strong>Fórum</strong>
+      </h2>
       <ForumForm
         handleChange={handleChange}
         loading={loading}
@@ -41,7 +53,7 @@ function Forum(props) {
         formData={formData}
         setFormData={setFormData}
         isSending={isSending}
-        textBtn={textBtn}
+        textBtn="Enviar"
       />
     </div>
   );

@@ -14,7 +14,8 @@ import PatientProfile from "../pages/PatientProfile";
 import DoctorProfile from "../pages/DoctorProfile";
 import DailyReviews from "../pages/DailyReviews";
 import Forum from "../pages/Forum";
-import ForumForm from "../components/Form/ForumForm"
+import ForumForm from "../components/Form/ForumForm";
+import Article from "../components/Form/ArticleForm";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -59,7 +60,8 @@ function App() {
           <Route path="/home" element={<ProtectedRoute component={Home} />} />
           <Route path="/daily" element={<DailyReviews />} />
           <Route path="/forum" element={<Forum />} />
-          <Route path="/forum/create" element={<Forum />} />
+          <Route path="/articles" element={<Article />} />
+          {/* <Route path="/forum/create" element={<Forum />} /> */}
         </Routes>
       </div>
     </AuthContextComponent>

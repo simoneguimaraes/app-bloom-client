@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import api from "../../apis/api";
 import FormField from "../Form/FormField";
 
-//fórum entre todos os usuários do app
-
-const tagsForum = [
+const tagsArticle = [
   "Doença Degenerativa",
   "Saúde Mental",
   "Ansiedade",
@@ -23,85 +21,53 @@ const tagsForum = [
   "Outro",
 ];
 
-function ForumForm(props) {
-  async function handleFileUpload(file) {
-    try {
-      const uploadData = new FormData();
-
-      uploadData.append("picture", file);
-
-      const response = await api.post("/upload", uploadData);
-
-      console.log(response);
-
-      return response.data.url;
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    try {
-      props.setLoading(true);
-
-      const pictures = await handleFileUpload(props.formData.picture);
-
-      const response = await api.post("/forum/create", {
-        ...props.formData,
-        pictures,
-        tags: props.formData.tags.map((currentTagObj) => currentTagObj.value),
-      });
-
-      console.log(response);
-      props.setLoading(false);
-    } catch (err) {
-      console.error(err);
-      props.setLoading(false);
-    }
-  }
-
+function ArticleForm(props) {
   return (
     <form
       onSubmit={props.handleSubmit}
       className="width-form d-flex flex-column"
       style={{ minWidth: "60%" }}
     >
-      {/* Post */}
+      {/* Título do Artigo */}
       <InputTexto
-        label="Compartilhe a sua experiência..."
-        placeholder="Compartilhe a sua experiência..."
-        name="text"
+        label="Título do Artigo"
+        name="title"
         onChange={props.handleChange}
-        value={props.formData.text}
+        value={props.value}
         required={true}
         maxlength="200"
-        className="input-post"
       />
 
-      {/* Picture */}
-      <FormField
-        type="file"
-        label="Compartilhar uma imagem:"
-        id="productFormPicture"
-        name="pictures"
+      {/* Autores */}
+      <InputTexto
+        label="Autores do Artigo"
+        name="authors"
         onChange={props.handleChange}
-        readOnly={props.loading}
+        value={props.value}
+        required={true}
       />
+      {/* Ano de Publicação */}
+      <InputTexto
+        label="Ano de Publicação: "
+        name="yearPublished"
+        onChange={props.handleChange}
+        value={props.value}
+        required={true}
+      />
+
       {/* Link */}
       <InputTexto
         label="Compartilhar um link:"
         name="websiteLink"
         onChange={props.handleChange}
-        value={props.formData.websiteLink}
+        value={props.value}
         required={true}
       />
 
       {/* Tags */}
-      <p>Assunto do post:</p>
+      <p>Tema do Artigo:</p>
       <div className="forum-tags">
-        {tagsForum.map((currentTag) => {
+        {tagsArticle.map((currentTag) => {
           return (
             <>
               <InputCheckbox
@@ -137,4 +103,4 @@ function ForumForm(props) {
   );
 }
 
-export default ForumForm;
+export default ArticleForm;
