@@ -61,7 +61,7 @@ function DailyReviews() {
           formData={formData}
           setFormData={setFormData}
           isSending={isSending}
-          textBtn="Cadastrar"
+          textBtn="Enviar"
         />
       </div>
     </div>

@@ -123,13 +123,7 @@ function DoctorForm(props) {
       />
 
       {/* streetAddress */}
-      <InputTexto
-        label="Qual é a rua do seu consultório?"
-        name="streetAddress"
-        onChange={props.handleChange}
-        value={props.doctorFormInfo.streetAddress}
-        required={true}
-      />
+      c
 
       {/* city */}
       <InputTexto
