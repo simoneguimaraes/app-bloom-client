@@ -7,8 +7,6 @@ import { Link } from "react-router-dom";
 import api from "../../apis/api";
 import FormField from "../Form/FormField";
 
-//fórum entre todos os usuários do app
-
 const tagsArticle = [
   "Doença Degenerativa",
   "Saúde Mental",
