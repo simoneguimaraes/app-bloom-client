@@ -26,6 +26,22 @@ function PatientForm(props) {
       className="width-form d-flex flex-column"
       style={{ minWidth: "60%" }}
     >
+
+      {/* Gênero */}
+      <InputSelect
+        label="Como gostaria de ser chamado?"
+        id="gender"
+        name="gender"
+        onChange={props.handleChange}
+        value={props.formData.gender}
+      >
+        <option value="" disabled></option>
+        <option value="Mulher">Sra.</option>
+        <option value="Homem">Sr.</option>
+        <option value="Outro">Prefiro não dizer</option>
+      </InputSelect>
+
+      
       {/* Data de Nascimento */}
       <InputTexto
         label="Qual é a sua data de nascimento?"
@@ -53,19 +69,16 @@ function PatientForm(props) {
         required={true}
       />
 
-      {/* Gênero */}
-      <InputSelect
-        label="Como gostaria de ser chamado?"
-        id="gender"
-        name="gender"
+      
+
+      {/* Profissão */}
+      <InputTexto
+        label="Qual é a sua profissão?"
+        name="profession"
         onChange={props.handleChange}
-        value={props.formData.gender}
-      >
-        <option value="" disabled></option>
-        <option value="Mulher">Sra.</option>
-        <option value="Homem">Sr.</option>
-        <option value="Outro">Prefiro não dizer</option>
-      </InputSelect>
+        value={props.formData.profession}
+        required={true}
+      />
 
       {/* Data de Início do Tratamento */}
       <InputTexto
@@ -136,14 +149,6 @@ function PatientForm(props) {
         required={true}
       />
 
-      {/* Profissão */}
-      <InputTexto
-        label="Quantas horas costuma se exercitar na semana? (em média?)"
-        name="weeklyExerciseHours"
-        onChange={props.handleChange}
-        value={props.formData.weeklyExerciseHours}
-        required={true}
-      />
       {/* Input Termos e Condições  */}
       {/* <InputCheckbox
         label="Eu aceito os Termos e Condições."
