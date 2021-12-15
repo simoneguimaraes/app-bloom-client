@@ -9,7 +9,7 @@ import FormField from "../Form/FormField";
 
 //fórum entre todos os usuários do app
 
-const tagsForum = [
+const tagsArticle = [
   "Doença Degenerativa",
   "Saúde Mental",
   "Ansiedade",
@@ -23,7 +23,7 @@ const tagsForum = [
   "Outro",
 ];
 
-function ForumForm(props) {
+function ArticleForm(props) {
   async function handleFileUpload(file) {
     try {
       const uploadData = new FormData();
@@ -48,7 +48,7 @@ function ForumForm(props) {
 
       const pictures = await handleFileUpload(props.formData.picture);
 
-      const response = await api.post("/forum/create", {
+      const response = await api.post("/articles/create", {
         ...props.formData,
         pictures,
         tags: props.formData.tags.map((currentTagObj) => currentTagObj.value),
@@ -101,7 +101,7 @@ function ForumForm(props) {
       {/* Tags */}
       <p>Assunto do post:</p>
       <div className="forum-tags">
-        {tagsForum.map((currentTag) => {
+        {tagsArticle.map((currentTag) => {
           return (
             <>
               <InputCheckbox
@@ -137,4 +137,4 @@ function ForumForm(props) {
   );
 }
 
-export default ForumForm;
+export default ArticleForm;
