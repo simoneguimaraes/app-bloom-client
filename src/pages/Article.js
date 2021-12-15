@@ -10,14 +10,12 @@ import api from "../apis/api";
 
 function Article(props) {
   const [loading, setLoading] = useState({});
-
   const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     authors: "",
     yearPublished: 0,
     websiteLink: "",
-    pictures: "",
     tags: [],
   });
 

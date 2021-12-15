@@ -60,7 +60,7 @@ function App() {
           <Route path="/home" element={<ProtectedRoute component={Home} />} />
           <Route path="/daily" element={<DailyReviews />} />
           <Route path="/forum" element={<Forum />} />
-          <Route path="/article" element={<Article />} />
+          <Route path="/articles" element={<Article />} />
           {/* <Route path="/forum/create" element={<Forum />} /> */}
         </Routes>
       </div>
