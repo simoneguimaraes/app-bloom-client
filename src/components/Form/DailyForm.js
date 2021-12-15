@@ -1,9 +1,5 @@
 import "../../assets/styles/index.css";
-
 import InputRadio from "../Inputs/InputRadio";
-import InputCheckbox from "../Inputs/InputCheckbox";
-import InputSelect from "../Inputs/InputSelect";
-import InputTexto from "../Inputs/InputTexto";
 
 //form para as perguntas diárias
 // {
