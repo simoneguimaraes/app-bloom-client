@@ -27,11 +27,11 @@ function DailyForm(props) {
         name="wellbeingToday"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.wellbeingToday}
+        checked={props.formData.wellbeingToday}
         required={true}
       />
       <InputRadio
@@ -40,11 +40,11 @@ function DailyForm(props) {
         name="wellbeingToday"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.wellbeingToday}
+        checked={props.formData.wellbeingToday}
         required={true}
       />
       <InputRadio
@@ -53,11 +53,11 @@ function DailyForm(props) {
         name="wellbeingToday"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.wellbeingToday}
+        checked={props.formData.wellbeingToday}
         required={true}
       />
       <InputRadio
@@ -66,11 +66,11 @@ function DailyForm(props) {
         name="wellbeingToday"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.wellbeingToday}
+        checked={props.formData.wellbeingToday}
         required={true}
       />
       <InputRadio
@@ -79,11 +79,11 @@ function DailyForm(props) {
         name="wellbeingToday"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.wellbeingToday}
+        checked={props.formData.wellbeingToday}
         required={true}
       />
 
@@ -95,11 +95,11 @@ function DailyForm(props) {
         name="humorAlteration"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.humorAlteration}
+        checked={props.formData.humorAlteration}
         required={true}
       />
       <InputRadio
@@ -108,11 +108,11 @@ function DailyForm(props) {
         name="humorAlteration"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.humorAlteration}
+        checked={props.formData.humorAlteration}
         required={true}
       />
 
@@ -124,11 +124,11 @@ function DailyForm(props) {
         name="nausea"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.nausea}
+        checked={props.formData.nausea}
         required={true}
       />
       <InputRadio
@@ -137,11 +137,11 @@ function DailyForm(props) {
         name="nausea"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.nausea}
+        checked={props.formData.nausea}
         required={true}
       />
       {/* Perda de Memória */}
@@ -152,11 +152,11 @@ function DailyForm(props) {
         name="memoryLoss"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.memoryLoss}
+        checked={props.formData.memoryLoss}
         required={true}
       />
       <InputRadio
@@ -165,11 +165,11 @@ function DailyForm(props) {
         name="memoryLoss"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.memoryLoss}
+        checked={props.formData.memoryLoss}
         required={true}
       />
 
@@ -181,11 +181,11 @@ function DailyForm(props) {
         name="desorientation"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.desorientation}
+        checked={props.formData.desorientation}
         required={true}
       />
       <InputRadio
@@ -194,11 +194,11 @@ function DailyForm(props) {
         name="desorientation"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.desorientation}
+        checked={props.formData.desorientation}
         required={true}
       />
 
@@ -211,11 +211,11 @@ function DailyForm(props) {
         name="dizziness"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.dizziness}
+        checked={props.formData.dizziness}
         required={true}
       />
       <InputRadio
@@ -224,11 +224,11 @@ function DailyForm(props) {
         name="dizziness"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.dizziness}
+        checked={props.formData.dizziness}
         required={true}
       />
 
@@ -240,11 +240,11 @@ function DailyForm(props) {
         name="constipation"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.constipation}
+        checked={props.formData.constipation}
         required={true}
       />
       <InputRadio
@@ -253,11 +253,11 @@ function DailyForm(props) {
         name="constipation"
         onChange={(event) =>
           props.setFormData({
-            ...props.FormData,
+            ...props.formData,
             [event.target.name]: event.target.checked,
           })
         }
-        checked={props.FormData.constipation}
+        checked={props.formData.constipation}
         required={true}
       />
 

@@ -1,6 +1,7 @@
 import "../../assets/styles/index.css";
 import InputTexto from "../Inputs/InputTexto";
 import axios from "axios";
+import InputCheckbox from "../Inputs/InputCheckbox";
 
 //fórum entre todos os usuários do app
 // {

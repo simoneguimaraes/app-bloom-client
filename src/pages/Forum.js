@@ -6,12 +6,6 @@ import axios from "axios";
 import Navbar from "../components/Navbar/Navbar";
 
 //fórum entre todos os usuários do app
-// {
-// text: "",
-// websiteLink: "",
-// pictures: "",
-// tags: [],
-// }
 
 function Forum() {
   const [formData, setFormData] = useState({
@@ -21,8 +15,6 @@ function Forum() {
     tags: [],
   });
 
-
-  
   return <div></div>;
 }
 
