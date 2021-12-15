@@ -20,6 +20,7 @@ function DoctorProfile(props) {
       [event.target.name]: event.target.value,
     });
   }
+  
   function handleSubmit(event) {
     event.preventDefault();
     setIsSending(true);
