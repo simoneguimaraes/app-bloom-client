@@ -33,35 +33,8 @@ const tagsDoctor = [
 ];
 
 function DoctorForm(props) {
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://www.consultacrm.com.br/api/index.php?tipo=crm&uf=&q=${props.doctorFormInfo.crmDoctor}&chave=1611662959&destino=xml`
-  //     )
-  //     .then((result) => {
-  //       console
-  //         .log
-  //         // if(result.data.includes("<total>0</total>")) {
-  //         //   async function handleSubmit(event) {
-  //         //     event.preventDefault();
 
-  //         //     try {
-  //         //       const response = await api.post("/login", state);
-  //         //       console.log(response);
 
-  //         //     } catch (err) {
-  //         //       console.error(err.response);
-  //         //       setErrors({ ...err.response.data.errors });
-  //         //     }
-  //         //   }
-
-  //         // }
-  //         ();
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [props.doctorFormInfo.crmDoctor]);
 
   return (
     <form
@@ -123,7 +96,13 @@ function DoctorForm(props) {
       />
 
       {/* streetAddress */}
-      c
+      <InputTexto
+        label="Qual é a rua do seu consultório?"
+        name="streetAddress"
+        onChange={props.handleChange}
+        value={props.doctorFormInfo.streetAddress}
+        required={true}
+      />
 
       {/* city */}
       <InputTexto
