@@ -22,44 +22,6 @@ const tagsArticle = [
 ];
 
 function ArticleForm(props) {
-  async function handleFileUpload(file) {
-    try {
-      const uploadData = new FormData();
-
-      uploadData.append("picture", file);
-
-      const response = await api.post("/upload", uploadData);
-
-      console.log(response);
-
-      return response.data.url;
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    try {
-      props.setLoading(true);
-
-      const pictures = await handleFileUpload(props.formData.picture);
-
-      const response = await api.post("/articles/create", {
-        ...props.formData,
-        pictures,
-        tags: props.formData.tags.map((currentTagObj) => currentTagObj.value),
-      });
-
-      console.log(response);
-      props.setLoading(false);
-    } catch (err) {
-      console.error(err);
-      props.setLoading(false);
-    }
-  }
-
   return (
     <form
       onSubmit={props.handleSubmit}
@@ -71,7 +33,7 @@ function ArticleForm(props) {
         label="Título do Artigo"
         name="title"
         onChange={props.handleChange}
-        value={props.formData.title}
+        value={props.value}
         required={true}
         maxlength="200"
       />
@@ -81,7 +43,7 @@ function ArticleForm(props) {
         label="Autores do Artigo"
         name="authors"
         onChange={props.handleChange}
-        value={props.formData.authors}
+        value={props.value}
         required={true}
       />
       {/* Ano de Publicação */}
@@ -89,7 +51,7 @@ function ArticleForm(props) {
         label="Ano de Publicação: "
         name="yearPublished"
         onChange={props.handleChange}
-        value={props.formData.yearPublished}
+        value={props.value}
         required={true}
       />
 
@@ -98,7 +60,7 @@ function ArticleForm(props) {
         label="Compartilhar um link:"
         name="websiteLink"
         onChange={props.handleChange}
-        value={props.formData.websiteLink}
+        value={props.value}
         required={true}
       />
 
