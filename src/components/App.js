@@ -53,10 +53,7 @@ function App() {
             }
           />
           <Route path="/home" element={<ProtectedRoute component={Home} />} />
-          <Route
-            path="/daily"
-            element={<ProtectedRoute component={DailyReviews} />}
-          />
+          <Route path="/daily" element={<DailyReviews />} />
         </Routes>
       </div>
     </AuthContextComponent>
