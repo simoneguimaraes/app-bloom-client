@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
-import FormField from "../../components/Form/FormField";
 import "../../assets/styles/index.css";
+import FormField from "../../components/Form/FormField";
+import InputSelect from "../../components/Inputs/InputSelect";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -77,6 +78,18 @@ function Signup(props) {
           error={errors.password}
           onChange={handleChange}
         />
+
+        <InputSelect
+          label="Você quer criar uma conta como médico ou paciente?"
+          id="role"
+          name="role"
+          onChange={props.handleChange}
+          value={props.doctorFormInfo.role}
+        >
+          <option value="" disabled></option>
+          <option value="Paciente">Paciente</option>
+          <option value="Médico">Médico</option>
+        </InputSelect>
       </div>
 
       <div className="width-max btn-container mb-3">
