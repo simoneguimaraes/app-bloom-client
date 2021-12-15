@@ -1,4 +1,4 @@
-import ForumForm from "../components/Form/ForumForm";
+import ArticleForm from "../components/Form/ArticleForm";
 import "../assets/styles/index.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -6,14 +6,16 @@ import axios from "axios";
 import Navbar from "../components/Navbar/Navbar";
 import api from "../apis/api";
 
-//fórum entre todos os usuários do app
+//artigos que os médicos podem postar
 
-function Forum(props) {
+function Article(props) {
   const [loading, setLoading] = useState({});
 
   const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
-    text: "",
+    title: "",
+    authors: "",
+    yearPublished: 0,
     websiteLink: "",
     pictures: "",
     tags: [],
@@ -30,7 +32,7 @@ function Forum(props) {
     event.preventDefault();
     axios.get("http://localhost:4000/api/").then(async (result) => {
       try {
-        const response = await api.post("/forum", props.formData);
+        const response = await api.post("/article", props.formData);
         console.log(response);
       } catch (err) {
         if (err.response) {
@@ -44,9 +46,9 @@ function Forum(props) {
   return (
     <div>
       <h2 className="text-center h4 mt-5 text-top-pag">
-            <strong>Fórum</strong>
+        <strong>Artigo</strong>
       </h2>
-      <ForumForm
+      <ArticleForm
         handleChange={handleChange}
         loading={loading}
         setLoading={setLoading}
@@ -59,4 +61,4 @@ function Forum(props) {
   );
 }
 
-export default Forum;
+export default Article;
