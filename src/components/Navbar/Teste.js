@@ -36,6 +36,15 @@ function Navbar(props) {
               </li>
             </>
           ) : null}
+          {loggedInUser.user.role === "PATIENT" ? (
+            <Link to="/patient-info" className="nav-link link-secondary">
+              Meu Perfil de Paciente
+            </Link>
+          ) : (
+            <Link to="/doctor-info" className="nav-link link-secondary">
+              Meu Perfil de Médico
+            </Link>
+          )}
         </div>
       </div>
       <nav class="navbar navbar-dark bg-dark">

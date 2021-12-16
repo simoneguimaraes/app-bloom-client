@@ -63,7 +63,7 @@ body {
   font-family: inherit;
   border-radius: 5px;
   text-decoration: none;
-  margin: 0;
+  margin: 10px;
   text-align: center;
 }
 
@@ -112,6 +112,12 @@ svg {
   max-height: 100px !important;
 }
 
+.doctor-cards {
+  box-shadow: 0 0 3px 0 #727171;
+  border: 1px solid #4e5157;
+  margin: 15px;
+  padding: 10px;
+}
 /*.forum-tags {
   /* display: flex; */
 

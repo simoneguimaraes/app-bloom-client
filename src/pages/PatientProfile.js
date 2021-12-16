@@ -71,7 +71,7 @@ function PatientProfile() {
                 formData={formData}
                 setFormData={setFormData}
                 isSending={isSending}
-                textBtn="Cadastrar"
+                textBtn="Confirmar"
               />
             </div>
           </div>
@@ -87,7 +87,21 @@ function PatientProfile() {
             </div>
             <div className="btn-container">
               <button type="submit" className="btn-green">
-                Editar conta
+                <Link to="/patient-info/update">Editar Meu Perfil</Link>
+              </button>
+            </div>
+
+            {/* "/forum" */}
+            <div className="btn-container">
+              <button type="submit" className="btn-green">
+                Ir para o Fórum
+              </button>
+            </div>
+
+            {/* "/doctor-info/doctors" */}
+            <div className="btn-container">
+              <button type="submit" className="btn-green">
+                Ver os Especialistas
               </button>
             </div>
           </div>
