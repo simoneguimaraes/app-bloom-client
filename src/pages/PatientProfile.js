@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar/Navbar";
 import PatientForm from "../components/Form/PatientForm";
+import api from "../apis/api";
+import { useNavigate } from "react-router-dom";
 
 function PatientProfile() {
+  const navigate = useNavigate();
   const [userCreated, setUserCreated] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [newRegistration, setNewRegistration] = useState(false);
@@ -26,19 +29,17 @@ function PatientProfile() {
   function handleChange(event) {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   }
-  function handleSubmit(event) {
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    setIsSending(true);
-    axios
-      .post("http://localhost:4000", formData)
-      .then(() => {
-        setUserCreated(true);
-        setIsSending(true);
-      })
-      .catch((err) => {
-        console.log(err);
-        setIsSending(true);
-      });
+
+    try {
+      const response = await api.post("/patient-info/create", formData);
+      console.log(response.data);
+      navigate("/forum");
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
@@ -81,13 +82,13 @@ function PatientProfile() {
                 className="btn-green"
                 onClick={() => setNewRegistration(true)}
               >
-                Criar nova conta
+                Sobre mim
               </button>
             </div>
             <div className="btn-container">
-              <Link to="/patient/editar-cadastro">
-                <button className="btn-green">Editar conta</button>
-              </Link>
+              <button type="submit" className="btn-green">
+                Editar conta
+              </button>
             </div>
           </div>
         )}

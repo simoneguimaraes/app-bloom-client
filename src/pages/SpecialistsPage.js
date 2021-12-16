@@ -24,7 +24,7 @@ function SpecialistsPage() {
         return (
           <div className="doctor-cards">
             <p>
-              Nome: <span>{currentDoctor.name}</span>
+              Nome: <span>{currentDoctor.userId.name}</span>
             </p>
             <p>
               Especialidade: <span>{currentDoctor.specialty}</span>

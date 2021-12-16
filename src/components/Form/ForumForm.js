@@ -25,21 +25,21 @@ const tagsForum = [
 
 function ForumForm(props) {
   console.log(props.formData);
-  async function handleFileUpload(file) {
-    try {
-      const uploadData = new FormData();
+  // async function handleFileUpload(file) {
+  //   try {
+  //     const uploadData = new FormData();
 
-      uploadData.append("picture", file);
+  //     uploadData.append("picture", file);
 
-      const response = await api.post("/upload", uploadData);
+  //     const response = await api.post("/upload", uploadData);
 
-      console.log(response);
+  //     console.log(response);
 
-      return response.data.url;
-    } catch (err) {
-      console.error(err);
-    }
-  }
+  //     return response.data.url;
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -47,16 +47,16 @@ function ForumForm(props) {
     try {
       props.setLoading(true);
 
-      const pictures = await handleFileUpload(props.formData.picture);
+      // const pictures = await handleFileUpload(props.formData.picture);
 
       const response = await api.post("/forum/create", {
         ...props.formData,
 
-        pictures,
-        tags: props.formData.tags.map((currentTagObj) => currentTagObj.value),
+        // pictures,
+        // tags: props.formData.tags.map((currentTagObj) => currentTagObj.value),
       });
 
-      console.log(response);
+      console.log(props.formData);
       props.setLoading(false);
     } catch (err) {
       console.error(err);
@@ -110,14 +110,9 @@ function ForumForm(props) {
                 label={currentTag}
                 id={currentTag}
                 name="tags"
-                onChange={(event) =>
-                  props.setFormData({
-                    ...props.formData,
-                    [event.target.name]: [event.target.value],
-                  })
-                }
-                required={true}
                 value={currentTag}
+                onChange={props.handleTags}
+                required={true}
               ></InputCheckbox>
             </>
           );

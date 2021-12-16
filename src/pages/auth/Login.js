@@ -36,11 +36,17 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/");
+      if (response.data.user.role === "PATIENT") {
+        navigate("/patient-info");
+      } else {
+        navigate("/doctor-info");
+      }
     } catch (err) {
-      console.error(err.response);
       if (err.response) {
-        setErrors({...err.response.data.errors})
+        console.error(err.response);
+        setErrors({ ...err.response.data.errors });
+      } else {
+        console.error(err);
       }
     }
   }
