@@ -19,7 +19,7 @@ function Navbar(props) {
         >
           {props.pag}
         </h2> */}
-          <Link to="/home" className="nav-link link-secondary active">
+          <Link to="/home" className="nav-link link-white active">
             Home
           </Link>
           {loggedInUser.user.name ? (
@@ -29,8 +29,8 @@ function Navbar(props) {
                   Login
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/signup" className="nav-link link-secondary">
+              <li className="nav-item link-white">
+                <Link to="/signup" className="nav-link">
                   Cadastrar
                 </Link>
               </li>

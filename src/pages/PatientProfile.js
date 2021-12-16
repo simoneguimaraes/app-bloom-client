@@ -82,7 +82,7 @@ function PatientProfile() {
                 className="btn-green"
                 onClick={() => setNewRegistration(true)}
               >
-                Sobre mim
+                Preencher Meu Perfil
               </button>
             </div>
             <div className="btn-container">
