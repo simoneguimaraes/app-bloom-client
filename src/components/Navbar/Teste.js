@@ -19,7 +19,7 @@ function Navbar(props) {
         >
           {props.pag}
         </h2> */}
-          <Link to="/home" className="nav-link link-white active">
+          <Link to="/" className="nav-link link-white active">
             Home
           </Link>
           {loggedInUser.user.name ? (
