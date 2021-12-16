@@ -4,6 +4,7 @@ import api from "../apis/api"
 import "../assets/styles/index.css"
 
 export default function DoctorTab() {
+    
     return (
     <form className="details-container">
         <h1>Doctor Tab</h1>

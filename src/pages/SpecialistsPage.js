@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../apis/api";
+import { Link } from "react-router-dom";
 
 function SpecialistsPage() {
   const [doctors, setDoctors] = useState([]);
@@ -37,6 +38,8 @@ function SpecialistsPage() {
             <p>
               Estado: <span>{currentDoctor.state}</span>
             </p>
+
+            <Link to={`/doctor-details/${currentDoctor._id}`}>Detalhes do médico</Link>
           </div>
         );
       })}
