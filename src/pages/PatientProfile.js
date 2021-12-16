@@ -85,7 +85,7 @@ function PatientProfile() {
               </button>
             </div>
             <div className="btn-container">
-              <Link to="/editar-cadastro">
+              <Link to="/patient/editar-cadastro">
                 <button className="btn-green">Editar conta</button>
               </Link>
             </div>
