@@ -20,7 +20,7 @@ function DoctorProfile(props) {
       [event.target.name]: event.target.value,
     });
   }
-  
+
   function handleSubmit(event) {
     event.preventDefault();
     setIsSending(true);
@@ -60,7 +60,6 @@ function DoctorProfile(props) {
         setIsSending(true);
       });
   }
-  
 
   return (
     <>
@@ -107,7 +106,7 @@ function DoctorProfile(props) {
                 </button>
               </div>
               <div className="btn-container">
-                <Link to="/editar-cadastro">
+                <Link to="/doctor/editar-cadastro">
                   <button className="btn-green">Editar conta</button>
                 </Link>
               </div>
