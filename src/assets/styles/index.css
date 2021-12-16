@@ -29,6 +29,14 @@ body {
   text-shadow: 2px 2px 4px #4d4c4c;
 }
 
+.home-title{
+  font-family: 'Satisfy', cursive;
+  font-size: 20px;
+  margin: 20px;
+  line-height: 0;
+  text-shadow: 2px 2px 4px #4d4c4c;
+}
+
 .welcomepage-logo-img {
   height: 92px;
   margin: 42px;
