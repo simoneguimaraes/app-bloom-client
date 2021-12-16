@@ -17,7 +17,7 @@ import Forum from "../pages/Forum";
 import ForumForm from "../components/Form/ForumForm";
 import Article from "../components/Form/ArticleForm";
 import DoctorTab from "../pages/DoctorTab";
-import PatientsInfo from "../pages/PatientsInfo";
+import PatientsInfo from "../pages/PatientsData";
 import DoctorDetails from "../pages/DoctorDetails";
 
 import SpecialistsPage from "../pages/SpecialistsPage";
@@ -71,7 +71,7 @@ function App() {
           {/* <Route path="/forum/create" element={<Forum />} /> */}
           <Route path="/doctor-tab" element={<DoctorTab />} />
           <Route path="/patients-info" element={<PatientsInfo />} />
-          <Route path="/doctor-details" element={<DoctorDetails />} />
+          <Route path="/doctor-details/:id" element={<DoctorDetails />} />
         </Routes>
       </div>
     </AuthContextComponent>

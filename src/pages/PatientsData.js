@@ -1,10 +1,9 @@
 import React from "react";
 
-export default function PatientInfo() {
+export default function PatientData () {
     return (
         <div>
             
         </div>
     )
-
-}
+    }
