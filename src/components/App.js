@@ -20,6 +20,7 @@ import DoctorTab from "../pages/DoctorTab";
 import PatientsInfo from "../pages/PatientsInfo";
 import DoctorDetails from "../pages/DoctorDetails";
 
+import SpecialistsPage from "../pages/SpecialistsPage";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -66,6 +67,7 @@ function App() {
           <Route path="/daily" element={<DailyReviews />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/articles" element={<Article />} />
+          <Route path="/doctor-info/doctors" element={<SpecialistsPage />} />
           {/* <Route path="/forum/create" element={<Forum />} /> */}
           <Route path="/doctor-tab" element={<DoctorTab />} />
           <Route path="/patients-info" element={<PatientsInfo />} />
