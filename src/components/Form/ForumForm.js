@@ -24,6 +24,7 @@ const tagsForum = [
 ];
 
 function ForumForm(props) {
+  console.log(props.formData);
   async function handleFileUpload(file) {
     try {
       const uploadData = new FormData();
@@ -50,6 +51,7 @@ function ForumForm(props) {
 
       const response = await api.post("/forum/create", {
         ...props.formData,
+
         pictures,
         tags: props.formData.tags.map((currentTagObj) => currentTagObj.value),
       });
@@ -64,7 +66,7 @@ function ForumForm(props) {
 
   return (
     <form
-      onSubmit={props.handleSubmit}
+      onSubmit={handleSubmit}
       className="width-form d-flex flex-column"
       style={{ minWidth: "60%" }}
     >
@@ -111,10 +113,11 @@ function ForumForm(props) {
                 onChange={(event) =>
                   props.setFormData({
                     ...props.formData,
-                    [event.target.name]: event.target.checked,
+                    [event.target.name]: [event.target.value],
                   })
                 }
                 required={true}
+                value={currentTag}
               ></InputCheckbox>
             </>
           );

@@ -20,31 +20,36 @@ function Forum(props) {
   });
 
   function handleChange(event) {
-    props.setFormData({
-      ...props.formData,
+    setFormData({
+      ...formData,
       [event.target.name]: event.target.value,
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    axios.get("http://localhost:4000/api/").then(async (result) => {
-      try {
-        const response = await api.post("/forum", props.formData);
-        console.log(response);
-      } catch (err) {
-        if (err.response) {
-          console.error(err.response);
-          // setErrors({ ...err.response.data.errors });
-        }
-      }
-    });
-  }
+  // async function handleSubmit(event) {
+  //   event.preventDefault();
+
+  //   try {
+  //     const response = await api.post("/forum/create", { ...formData });
+  //   } catch (err) {
+  //     if (err.response) {
+  //       console.error(err.response);
+  //       // setErrors({ ...err.response.data.errors });
+  //     }
+  //   }
+    // axios.get("http://localhost:4000/api/").then(async (result) => {
+    //   try {
+    //     const response =
+    //     console.log(response);
+
+    //   }
+    // });
+  
 
   return (
     <div>
       <h2 className="text-center h4 mt-5 text-top-pag">
-            <strong>Fórum</strong>
+        <strong>Fórum</strong>
       </h2>
       <ForumForm
         handleChange={handleChange}

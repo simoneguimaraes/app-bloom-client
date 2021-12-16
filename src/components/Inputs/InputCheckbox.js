@@ -8,6 +8,7 @@ function InputCheckbox(props) {
         id={props.id}
         onChange={props.onChange}
         checked={props.checked}
+        value={props.value}
       />
       <label className="form-check-label" htmlFor={props.id}>
         {props.label}
