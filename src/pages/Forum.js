@@ -10,12 +10,12 @@ import api from "../apis/api";
 
 function Forum(props) {
   const [loading, setLoading] = useState({});
-
+  const [response, setResponse] = useState([]);
   const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
     text: "",
     websiteLink: "",
-    pictures: "",
+    // pictures: "",
     tags: [],
   });
 
@@ -25,6 +25,27 @@ function Forum(props) {
       [event.target.name]: event.target.value,
     });
   }
+
+  function handleTags(event) {
+    setFormData({
+      ...formData,
+      tags: [...formData.tags, event.target.value],
+    });
+  }
+
+  //renderizar todos os posts no estilo "feed"
+  useEffect(() => {
+    async function fetchPosts() {
+      try {
+        const response = await api.get("/forum");
+        setResponse([...response.data]);
+        console.log(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchPosts();
+  }, []);
 
   // async function handleSubmit(event) {
   //   event.preventDefault();
@@ -37,20 +58,33 @@ function Forum(props) {
   //       // setErrors({ ...err.response.data.errors });
   //     }
   //   }
-    // axios.get("http://localhost:4000/api/").then(async (result) => {
-    //   try {
-    //     const response =
-    //     console.log(response);
+  // axios.get("http://localhost:4000/api/").then(async (result) => {
+  //   try {
+  //     const response =
+  //     console.log(response);
 
-    //   }
-    // });
-  
+  //   }
+  // });
 
   return (
     <div>
       <h2 className="text-center h4 mt-5 text-top-pag">
         <strong>Fórum</strong>
       </h2>
+      {response.map(
+        (currentPost) => {
+          return (
+            <div key={currentPost._id}>
+              <p>{currentPost.text}</p>
+              <a href={currentPost.websiteLink}>Link enviado</a>
+              <img src={currentPost.pictures} />
+              <p>{currentPost.tags}</p>
+            </div>
+          );
+        }
+
+        // "pictures":"www.google.com","tags":["Saúde Mental","Ansiedade"],"__v":0}
+      )}
       <ForumForm
         handleChange={handleChange}
         loading={loading}
@@ -59,6 +93,7 @@ function Forum(props) {
         setFormData={setFormData}
         isSending={isSending}
         textBtn="Enviar"
+        handleTags={handleTags}
       />
     </div>
   );
