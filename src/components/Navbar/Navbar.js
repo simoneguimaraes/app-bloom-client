@@ -9,15 +9,14 @@ function Navbar(props) {
   const { logout, loggedInUser } = useContext(AuthContext);
   const params = useLocation();
 
-  const json = localStorage.getItem("loggedInUser");
-  const storedUser = JSON.parse(json || '""');
+  // const json = localStorage.getItem("loggedInUser");
+  // const storedUser = JSON.parse(json || '""');
 
-  useEffect(() => {
-    if (storedUser !== "") {
-      setUserName(storedUser.user.name.split(" ")[0]);
-    }
-  }, [storedUser, params]);
-
+  // useEffect(() => {
+  //   if (storedUser !== "") {
+  //     setUserName(storedUser.user.name.split(" ")[0]);
+  //   }
+  // }, [storedUser, params]);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bgColor">
       <div className="container-fluid">
@@ -53,13 +52,13 @@ function Navbar(props) {
             {loggedInUser.user.name ? (
               <>
                 <li className="nav-item">
-                  <Link to="/create-item" className="nav-link">
+                  <Link to="/login" className="nav-link">
                     Login
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/list-item" className="nav-link">
-                    Sign Up
+                  <Link to="/signup" className="nav-link">
+                    Cadastrar
                   </Link>
                 </li>
               </>
@@ -88,17 +87,17 @@ function Navbar(props) {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Bem vindo, {userName}
+                    Olá, {loggedInUser.user.name}
                   </span>
                   <ul
                     className="dropdown-menu dropdown-menu-dark"
                     aria-labelledby="dropdownMenuButton2"
                   >
-                    <li>
+                    {/* <li>
                       <Link to="/edit-user" className="dropdown-item">
                         Editar cadastro
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         to="/login"
