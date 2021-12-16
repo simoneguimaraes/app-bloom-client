@@ -19,6 +19,9 @@ function SpecialistsPage() {
 
   return (
     <>
+      <h2 className="text-center h4 m-4 text-top-pag">
+        <strong>Especialistas</strong>
+      </h2>
       {doctors.map((currentDoctor) => {
         return (
           <div className="doctor-cards">
