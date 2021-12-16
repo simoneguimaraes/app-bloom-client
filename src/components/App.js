@@ -19,6 +19,7 @@ import Article from "../components/Form/ArticleForm";
 import DoctorTab from "../pages/DoctorTab";
 import PatientsInfo from "../pages/PatientsInfo";
 import DoctorDetails from "../pages/DoctorDetails";
+import PatientEditProfile from "../pages/PatientEditProfile";
 
 import SpecialistsPage from "../pages/SpecialistsPage";
 
@@ -38,7 +39,7 @@ function App() {
     <AuthContextComponent>
       <div className="min-vh-100">
         <Navbar />
-        
+
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route
@@ -61,6 +62,15 @@ function App() {
               />
             }
           />
+          <Route
+            path="/patient-info/update"
+            element={
+              <PatientEditProfile
+                doctorFormInfo={formData}
+                doctorFormInfoSetState={setFormData}
+              />
+            }
+          />
 
           {/* //rotas protegidas */}
           <Route path="/home" element={<ProtectedRoute component={Home} />} />
@@ -71,6 +81,7 @@ function App() {
           {/* <Route path="/forum/create" element={<Forum />} /> */}
           <Route path="/doctor-tab" element={<DoctorTab />} />
           <Route path="/patients-info" element={<PatientsInfo />} />
+
           <Route path="/doctor-details" element={<DoctorDetails />} />
         </Routes>
       </div>

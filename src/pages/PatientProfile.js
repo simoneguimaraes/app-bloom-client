@@ -87,7 +87,7 @@ function PatientProfile() {
             </div>
             <div className="btn-container">
               <button type="submit" className="btn-green">
-                Editar Meu Perfil
+                <Link to="/patient-info/update">Editar Meu Perfil</Link>
               </button>
             </div>
 
