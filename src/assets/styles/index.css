@@ -104,10 +104,23 @@ svg {
   max-height: 100px !important;
 }
 
-.forum-tags {
+/*.forum-tags {
   /* display: flex; */
-}
+
 /*
 
 font-family: 'Roboto', sans-serif;
 */
+
+/*doctor tab*/
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10%; 
+}
+
+.container-buttom-dt {
+  width: 200px; 
+}
