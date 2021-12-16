@@ -16,6 +16,10 @@ import DailyReviews from "../pages/DailyReviews";
 import Forum from "../pages/Forum";
 import ForumForm from "../components/Form/ForumForm";
 import Article from "../components/Form/ArticleForm";
+import DoctorTab from "../pages/DoctorTab";
+import PatientsInfo from "../pages/PatientsInfo";
+import DoctorDetails from "../pages/DoctorDetails";
+
 import SpecialistsPage from "../pages/SpecialistsPage";
 
 function App() {
@@ -34,6 +38,7 @@ function App() {
     <AuthContextComponent>
       <div className="min-vh-100">
         <Navbar />
+        
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route
@@ -64,6 +69,9 @@ function App() {
           <Route path="/articles" element={<Article />} />
           <Route path="/doctor-info/doctors" element={<SpecialistsPage />} />
           {/* <Route path="/forum/create" element={<Forum />} /> */}
+          <Route path="/doctor-tab" element={<DoctorTab />} />
+          <Route path="/patients-info" element={<PatientsInfo />} />
+          <Route path="/doctor-details" element={<DoctorDetails />} />
         </Routes>
       </div>
     </AuthContextComponent>
