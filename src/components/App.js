@@ -9,7 +9,7 @@ import Home from "../pages/Home";
 import Signup from "../pages/auth/Signup";
 import Login from "../pages/auth/Login";
 import WelcomePage from "../pages/WelcomePage";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/Teste";
 import PatientProfile from "../pages/PatientProfile";
 import DoctorProfile from "../pages/DoctorProfile";
 import DailyReviews from "../pages/DailyReviews";
