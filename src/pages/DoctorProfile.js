@@ -7,8 +7,10 @@ import DoctorForm from "../components/Form/DoctorForm";
 import api from "../apis/api";
 import { useEffect } from "react";
 import ErrorAlert from "../components/ErrorAlert";
+import { useNavigate } from "react-router-dom";
 
 function DoctorProfile(props) {
+  const navigate = useNavigate();
   const [userCreated, setUserCreated] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [newRegistration, setNewRegistration] = useState(false);
@@ -62,16 +64,14 @@ function DoctorProfile(props) {
       });
   }
 
-  function deleteCount() {
-    async function deleteUser() {
-      try {
-        api.delete("/userId");
-        setUserDeleted(true);
-      } catch (err) {
-        console.error(err);
-      }
+  async function deleteCount() {
+    try {
+      api.delete("/profile/delete");
+      navigate("/");
+      setUserDeleted(true);
+    } catch (err) {
+      console.error(err);
     }
-    deleteUser();
   }
 
   return (
@@ -136,7 +136,7 @@ function DoctorProfile(props) {
               {/* Preencher Cadastro */}
               <div className="btn-container">
                 <button
-                  className="btn-black "
+                  className="btn-green "
                   onClick={() => setNewRegistration(true)}
                 >
                   Cadastrar Meu Perfil

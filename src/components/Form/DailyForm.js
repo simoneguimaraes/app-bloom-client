@@ -30,67 +30,47 @@ function DailyForm(props) {
         <p>Como está se sentindo hoje?</p>
         <InputRadio
           label="1"
+          value="1"
           id="wellbeingToday"
           name="wellbeingToday"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.wellbeingToday}
+          onChange={props.handleChange}
+          checked={props.formData.wellbeingToday === "1"}
           required={true}
         />
         <InputRadio
           label="2"
+          value="2"
           id="wellbeingToday"
           name="wellbeingToday"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.wellbeingToday}
+          onChange={props.handleChange}
+          checked={props.formData.wellbeingToday === "2"}
           required={true}
         />
         <InputRadio
           label="3"
+          value="3"
           id="wellbeingToday"
           name="wellbeingToday"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.wellbeingToday}
+          onChange={props.handleChange}
+          checked={props.formData.wellbeingToday === "3"}
           required={true}
         />
         <InputRadio
           label="4"
+          value="4"
           id="wellbeingToday"
           name="wellbeingToday"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.wellbeingToday}
+          onChange={props.handleChange}
+          checked={props.formData.wellbeingToday === "4"}
           required={true}
         />
         <InputRadio
           label="5"
+          value="5"
           id="wellbeingToday"
           name="wellbeingToday"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.wellbeingToday}
+          onChange={props.handleChange}
+          checked={props.formData.wellbeingToday === "5"}
           required={true}
         />
 
@@ -98,28 +78,20 @@ function DailyForm(props) {
         <p>Você teve alteração de humor ontem?</p>
         <InputRadio
           label="Sim"
+          value="Sim"
           id="humorAlteration"
           name="humorAlteration"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.humorAlteration}
+          onChange={props.handleChange}
+          checked={props.formData.humorAlteration === "Sim"}
           required={true}
         />
         <InputRadio
           label="Não"
+          value="Não"
           id="humorAlteration"
           name="humorAlteration"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.humorAlteration}
+          onChange={props.handleChange}
+          checked={props.formData.humorAlteration === "Não"}
           required={true}
         />
 
@@ -127,56 +99,40 @@ function DailyForm(props) {
         <p>Você sentiu náusea ontem?</p>
         <InputRadio
           label="Sim"
+          value="Sim"
           id="nausea"
           name="nausea"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.nausea}
+          onChange={props.handleChange}
+          checked={props.formData.nausea === "Sim"}
           required={true}
         />
         <InputRadio
           label="Não"
+          value="Não"
           id="nausea"
           name="nausea"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.nausea}
+          onChange={props.handleChange}
+          checked={props.formData.nausea === "Não"}
           required={true}
         />
         {/* Perda de Memória */}
         <p>Você teve perda de memória ontem?</p>
         <InputRadio
           label="Sim"
+          value="Sim"
           id="memoryLoss"
           name="memoryLoss"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.memoryLoss}
+          onChange={props.handleChange}
+          checked={props.formData.memoryLoss === "Sim"}
           required={true}
         />
         <InputRadio
           label="Não"
+          value="Não"
           id="memoryLoss"
           name="memoryLoss"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.memoryLoss}
+          onChange={props.handleChange}
+          checked={props.formData.memoryLoss === "Não"}
           required={true}
         />
 
@@ -184,28 +140,20 @@ function DailyForm(props) {
         <p>Você se sentiu desorientado ontem?</p>
         <InputRadio
           label="Sim"
+          value="Sim"
           id="desorientation"
           name="desorientation"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.desorientation}
+          onChange={props.handleChange}
+          checked={props.formData.desorientation === "Sim"}
           required={true}
         />
         <InputRadio
           label="Não"
+          value="Não"
           id="desorientation"
           name="desorientation"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.desorientation}
+          onChange={props.handleChange}
+          checked={props.formData.desorientation === "Não"}
           required={true}
         />
 
@@ -214,28 +162,20 @@ function DailyForm(props) {
         <p>Você se confuso ontem?</p>
         <InputRadio
           label="Sim"
+          value="Sim"
           id="dizziness"
           name="dizziness"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.dizziness}
+          onChange={props.handleChange}
+          checked={props.formData.dizziness === "Sim"}
           required={true}
         />
         <InputRadio
           label="Não"
+          value="Não"
           id="dizziness"
           name="dizziness"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.dizziness}
+          onChange={props.handleChange}
+          checked={props.formData.dizziness === "Não"}
           required={true}
         />
 
@@ -243,28 +183,20 @@ function DailyForm(props) {
         <p>Você teve desinteria ontem?</p>
         <InputRadio
           label="Sim"
+          value="Sim"
           id="constipation"
           name="constipation"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.constipation}
+          onChange={props.handleChange}
+          checked={props.formData.constipation === "Sim"}
           required={true}
         />
         <InputRadio
           label="Não"
+          value="Não"
           id="constipation"
           name="constipation"
-          onChange={(event) =>
-            props.setFormData({
-              ...props.formData,
-              [event.target.name]: event.target.checked,
-            })
-          }
-          checked={props.formData.constipation}
+          onChange={props.handleChange}
+          checked={props.formData.constipation === "Não"}
           required={true}
         />
       </div>

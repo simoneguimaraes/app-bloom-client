@@ -42,16 +42,18 @@ function PatientEditProfile(props) {
   useEffect(() => {
     async function fetchPatients() {
       try {
-        const patientData = await api.get("/patient-info", formData);
+        const patientData = await api.get("/patient-info");
         console.log(patientData);
-        setPatients([...patientData.data]);
+        setFormData({...patientData.data});
       } catch (err) {
         console.log(err);
       }
     }
     fetchPatients();
-  }, [formData]);
+  }, []);
 
+
+  
   return (
     <form
       onSubmit={handleSubmit}

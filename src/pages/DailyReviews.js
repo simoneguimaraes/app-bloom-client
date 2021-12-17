@@ -21,6 +21,10 @@ function DailyReviews() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   }
 
+  function handleWellBeing(event) {
+    setFormData({ ...formData, [event.target.name]: Number(event.target.value)})
+  }
+
   useEffect(() => {
     async function fetchDailyReviews() {
       try {
@@ -41,7 +45,7 @@ function DailyReviews() {
 
     try {
       setFormData(true);
-      const response = await api.post("/daily", {
+      const response = await api.post("/daily/create", {
         ...formData,
       });
 
@@ -58,6 +62,7 @@ function DailyReviews() {
         <DailyForm
           handleChange={handleChange}
           handleSubmit={handleSubmit}
+          handleWellBeing={handleWellBeing}
           formData={formData}
           setFormData={setFormData}
           isSending={isSending}
