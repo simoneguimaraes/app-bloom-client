@@ -58,13 +58,17 @@ body {
   box-shadow: 0 0 5px 0 #4d4c4c;
   color: white;
   padding: .5em;
-  width: 180px;
+  width: 200px;
   font-weight: 700;
   font-family: inherit;
   border-radius: 5px;
   text-decoration: none;
   margin: 10px;
   text-align: center;
+}
+
+.btn-green a {
+  text-decoration: none;
 }
 
 .btn-green:hover, .btn-green:focus {

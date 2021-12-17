@@ -11,39 +11,69 @@ function Navbar(props) {
     <>
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
-          {/* <h5 class="text-white h4">Collapsed content</h5>
-          <h2
-          className={`${
-            props.pag === "Home" ? "d-none" : null
-          } navbar-brand text-white navbar-toggler border-0 mb-0`}
-        >
-          {props.pag}
-        </h2> */}
           <Link to="/" className="nav-link link-secondary active">
             Home
           </Link>
-          {loggedInUser.user ? (
+
+          {!loggedInUser.user.name ? (
             <>
               <li className="nav-item">
                 <Link to="/login" className="nav-link link-secondary">
                   Login
                 </Link>
               </li>
-              <li className="nav-item link-white">
+              <li className="nav-item">
                 <Link to="/signup" className="nav-link link-secondary">
                   Cadastrar
                 </Link>
               </li>
             </>
-          ) : null}
-          {loggedInUser.user.role === "PATIENT" ? (
-            <Link to="/patient-info" className="nav-link link-secondary">
-              Meu Perfil de Paciente
-            </Link>
           ) : (
-            <Link to="/doctor-info" className="nav-link link-secondary">
-              Meu Perfil de Médico
-            </Link>
+            <>
+              <div className="nav-item ms-3 ps-3 border-start">
+                <span> Olá, {loggedInUser.user.name}</span>
+              </div>
+
+              {loggedInUser.user.role === "PATIENT" ? (
+                <>
+                  <Link to="/patient-info" className="nav-link link-secondary">
+                    Meu Perfil de Paciente
+                  </Link>
+                  <Link to="/forum" className="nav-link link-secondary">
+                    Fórum
+                  </Link>
+                  <Link
+                    to="/doctor-info/doctors"
+                    className="nav-link link-secondary"
+                  >
+                    Ver os Especialistas
+                  </Link>
+                  <Link
+                    to="/login"
+                    onClick={logout}
+                    className="nav-link link-secondary"
+                  >
+                    Sair
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/doctor-info" className="nav-link link-secondary">
+                    Meu Perfil de Médico
+                  </Link>
+                  <Link to="/forum" className="nav-link link-secondary">
+                    Fórum
+                  </Link>
+                  <Link
+                    to="/login"
+                    onClick={logout}
+                    className="nav-link link-secondary"
+                  >
+                    Sair
+                  </Link>
+                </>
+              )}
+            </>
           )}
         </div>
       </div>

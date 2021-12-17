@@ -87,21 +87,27 @@ function PatientProfile() {
             </div>
             <div className="btn-container">
               <button type="submit" className="btn-green">
-                <Link to="/patient-info/update">Editar Meu Perfil</Link>
+                <Link style={{ color: "white" }} to="/patient-info/update">
+                  Editar Meu Perfil
+                </Link>
               </button>
             </div>
 
             {/* "/forum" */}
-            <div className="btn-container">
+            <div className="btn-container ">
               <button type="submit" className="btn-green">
-                Ir para o Fórum
+                <Link style={{ color: "white" }} to="/forum">
+                  Entrar no Fórum
+                </Link>
               </button>
             </div>
 
             {/* "/doctor-info/doctors" */}
             <div className="btn-container">
               <button type="submit" className="btn-green">
-                Ver os Especialistas
+                <Link style={{ color: "white" }} to="/doctor-info/doctors">
+                  Ver os Especialistas
+                </Link>
               </button>
             </div>
           </div>
