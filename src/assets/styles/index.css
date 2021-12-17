@@ -80,7 +80,7 @@ body {
 /* button black */
 
 .btn-black {
-  background-color: #4d4c4c;
+  background-color: #1F232B;
   box-shadow: 0 0 5px 0 #4d4c4c;
   color: white;
   padding: .5em;
@@ -174,13 +174,15 @@ svg {
   margin: 15px;
   padding: 10px;
 }
+
+.navbar-margin {
+  margin-left: 10px;
+}
 /*.forum-tags {
   /* display: flex; */
 
 /*
 
-font-family: 'Roboto', sans-serif;
-*/
 
 /*doctor tab*/
 

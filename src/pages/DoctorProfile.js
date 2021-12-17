@@ -13,6 +13,7 @@ function DoctorProfile(props) {
   const [isSending, setIsSending] = useState(false);
   const [newRegistration, setNewRegistration] = useState(false);
   const [errors, setErrors] = useState(false);
+  const [userDeleted, setUserDeleted] = useState(false);
 
   function handleChange(event) {
     props.doctorFormInfoSetState({
@@ -61,6 +62,18 @@ function DoctorProfile(props) {
       });
   }
 
+  function deleteCount() {
+    async function deleteUser() {
+      try {
+        api.delete("/userId");
+        setUserDeleted(true);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    deleteUser();
+  }
+
   return (
     <>
       <div>
@@ -102,7 +115,7 @@ function DoctorProfile(props) {
                   className="btn-green"
                   onClick={() => setNewRegistration(true)}
                 >
-                  Criar nova conta
+                  Preencher Meu Perfil
                 </button>
               </div>
               <div className="btn-container">
@@ -112,13 +125,18 @@ function DoctorProfile(props) {
               </div>
 
               {/* Excluir conta */}
-            <div className="btn-container">
-              <button type="submit" className="btn-black">
-                <Link style={{ color: "white" }} to="/">
-                  Excluir conta
-                </Link>
-              </button>
-            </div>
+
+              <div className="btn-container">
+                <button
+                  type="submit"
+                  onClick={() => deleteCount()}
+                  className="btn-black"
+                >
+                  <Link style={{ color: "white" }} to="/">
+                    Excluir conta
+                  </Link>
+                </button>
+              </div>
             </div>
           )}
         </div>

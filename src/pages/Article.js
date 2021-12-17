@@ -20,8 +20,8 @@ function Article(props) {
   });
 
   function handleChange(event) {
-    props.setFormData({
-      ...props.formData,
+    setFormData({
+      ...formData,
       [event.target.name]: event.target.value,
     });
   }
@@ -31,7 +31,7 @@ function Article(props) {
     axios.get("http://localhost:4000/api/");
 
     try {
-      const response = await api.post("/articles", props.formData);
+      const response = await api.post("/articles", formData);
       console.log(response);
     } catch (err) {
       console.error(err.response);

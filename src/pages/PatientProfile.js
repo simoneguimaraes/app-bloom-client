@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 function PatientProfile() {
   const navigate = useNavigate();
   const [userCreated, setUserCreated] = useState(false);
+  const [userDeleted, setUserDeleted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [newRegistration, setNewRegistration] = useState(false);
   const [formData, setFormData] = useState({
@@ -42,6 +43,18 @@ function PatientProfile() {
     }
   }
 
+  function deleteCount() {
+    async function deleteUser() {
+      try {
+        api.delete("/userId");
+        setUserDeleted(true);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    deleteUser();
+  }
+
   return (
     <div>
       {userCreated ? (
@@ -54,14 +67,14 @@ function PatientProfile() {
         </>
       ) : null}
       {newRegistration ? (
-        <h2 className="text-center h4 mt-5 text-top-pag">
+        <h2 className="text-center h4 mt-4 text-top-pag">
           <strong>Sobre mim</strong>
         </h2>
       ) : null}
       <div className="container-items">
         {newRegistration ? (
           <div
-            className="container mt-5 resg-pag-container"
+            className="container mt-4 resg-pag-container"
             style={{ maxWidth: "800px" }}
           >
             <div className="w-100 m-auto d-flex justify-content-center">
@@ -124,8 +137,13 @@ function PatientProfile() {
             </div>
 
             {/* Excluir conta */}
+
             <div className="btn-container">
-              <button type="submit" className="btn-black">
+              <button
+                type="submit"
+                onClick={() => deleteCount()}
+                className="btn-black"
+              >
                 <Link style={{ color: "white" }} to="/">
                   Excluir conta
                 </Link>

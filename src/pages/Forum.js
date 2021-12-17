@@ -68,7 +68,7 @@ function Forum(props) {
 
   return (
     <div>
-      <h2 className="text-center h4 mt-5 text-top-pag">
+      <h2 className="text-center h4 mt-4 text-top-pag">
         <strong>Fórum</strong>
       </h2>
       <div
