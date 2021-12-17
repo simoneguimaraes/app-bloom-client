@@ -68,33 +68,39 @@ function Forum(props) {
 
   return (
     <div>
-      <h2 className="text-center h4 mt-5 text-top-pag">
+      <h2 className="text-center h4 mt-4 text-top-pag">
         <strong>Fórum</strong>
       </h2>
-      {response.map(
-        (currentPost) => {
-          return (
-            <div key={currentPost._id}>
-              <p>{currentPost.text}</p>
-              <a href={currentPost.websiteLink}>Link enviado</a>
-              <img src={currentPost.pictures} />
-              <p>{currentPost.tags}</p>
-            </div>
-          );
-        }
+      <div
+        className="container mt-3 resg-pag-container"
+        style={{ maxWidth: "800px" }}
+      >
+        {response.map(
+          (currentPost) => {
+            return (
+              <div key={currentPost._id}>
+                <p>{currentPost.text}</p>
+                <a href={currentPost.websiteLink}>Link enviado</a>
+                <img src={currentPost.pictures} />
+                <p>{currentPost.tags}</p>
+              </div>
+            );
+          }
 
-        // "pictures":"www.google.com","tags":["Saúde Mental","Ansiedade"],"__v":0}
-      )}
-      <ForumForm
-        handleChange={handleChange}
-        loading={loading}
-        setLoading={setLoading}
-        formData={formData}
-        setFormData={setFormData}
-        isSending={isSending}
-        textBtn="Enviar"
-        handleTags={handleTags}
-      />
+          // "pictures":"www.google.com","tags":["Saúde Mental","Ansiedade"],"__v":0}
+        )}
+
+        <ForumForm
+          handleChange={handleChange}
+          loading={loading}
+          setLoading={setLoading}
+          formData={formData}
+          setFormData={setFormData}
+          isSending={isSending}
+          textBtn="Enviar"
+          handleTags={handleTags}
+        />
+      </div>
     </div>
   );
 }

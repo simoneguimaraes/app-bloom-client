@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 function PatientProfile() {
   const navigate = useNavigate();
   const [userCreated, setUserCreated] = useState(false);
+  const [userDeleted, setUserDeleted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [newRegistration, setNewRegistration] = useState(false);
   const [formData, setFormData] = useState({
@@ -42,6 +43,18 @@ function PatientProfile() {
     }
   }
 
+  function deleteCount() {
+    async function deleteUser() {
+      try {
+        api.delete("/userId");
+        setUserDeleted(true);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    deleteUser();
+  }
+
   return (
     <div>
       {userCreated ? (
@@ -54,14 +67,14 @@ function PatientProfile() {
         </>
       ) : null}
       {newRegistration ? (
-        <h2 className="text-center h4 mt-5 text-top-pag">
+        <h2 className="text-center h4 mt-4 text-top-pag">
           <strong>Sobre mim</strong>
         </h2>
       ) : null}
       <div className="container-items">
         {newRegistration ? (
           <div
-            className="container mt-5 resg-pag-container"
+            className="container mt-4 resg-pag-container"
             style={{ maxWidth: "800px" }}
           >
             <div className="w-100 m-auto d-flex justify-content-center">
@@ -77,31 +90,64 @@ function PatientProfile() {
           </div>
         ) : (
           <div className="d-flex flex-column justify-content-center mt-4">
-            <div className="btn-container">
-              <button
-                className="btn-green"
-                onClick={() => setNewRegistration(true)}
-              >
-                Preencher Meu Perfil
-              </button>
-            </div>
-            <div className="btn-container">
-              <button type="submit" className="btn-green">
-                <Link to="/patient-info/update">Editar Meu Perfil</Link>
-              </button>
-            </div>
+            
 
-            {/* "/forum" */}
+            {/* "/daily" */}
             <div className="btn-container">
-              <button type="submit" className="btn-green">
-                Ir para o Fórum
+              <button type="submit" className=" btn-daily">
+                <Link style={{ color: "white" }} to="/daily">
+                  Pesquisa Diária
+                </Link>
+              </button>
+            </div>
+            {/* "/forum" */}
+            <div className="btn-container ">
+              <button type="submit" className="btn-pink">
+                <Link style={{ color: "white" }} to="/forum">
+                  Entrar no Fórum
+                </Link>
               </button>
             </div>
 
             {/* "/doctor-info/doctors" */}
             <div className="btn-container">
-              <button type="submit" className="btn-green">
-                Ver os Especialistas
+              <button type="submit" className="btn-pink">
+                <Link style={{ color: "white" }} to="/doctor-info/doctors">
+                  Ver os Especialistas
+                </Link>
+              </button>
+            </div>
+
+            {/* Preencher Cadastro */}
+            <div className="btn-container">
+              <button
+                className="btn-pink"
+                onClick={() => setNewRegistration(true)}
+              >
+                Cadastrar Meu Perfil
+              </button>
+            </div>
+
+            {/* Editar Cadastro */}
+            <div className="btn-container">
+              <button type="submit" className="btn-black">
+                <Link style={{ color: "white" }} to="/patient-info/update">
+                  Editar Meu Perfil
+                </Link>
+              </button>
+            </div>
+
+            {/* Excluir conta */}
+
+            <div className="btn-container">
+              <button
+                type="submit"
+                onClick={() => deleteCount()}
+                className="btn-black"
+              >
+                <Link style={{ color: "white" }} to="/">
+                  Excluir conta
+                </Link>
               </button>
             </div>
           </div>

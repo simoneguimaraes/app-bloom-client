@@ -13,6 +13,7 @@ function DoctorProfile(props) {
   const [isSending, setIsSending] = useState(false);
   const [newRegistration, setNewRegistration] = useState(false);
   const [errors, setErrors] = useState(false);
+  const [userDeleted, setUserDeleted] = useState(false);
 
   function handleChange(event) {
     props.doctorFormInfoSetState({
@@ -61,6 +62,18 @@ function DoctorProfile(props) {
       });
   }
 
+  function deleteCount() {
+    async function deleteUser() {
+      try {
+        api.delete("/userId");
+        setUserDeleted(true);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    deleteUser();
+  }
+
   return (
     <>
       <div>
@@ -97,18 +110,57 @@ function DoctorProfile(props) {
             </div>
           ) : (
             <div className="d-flex flex-column justify-content-center mt-4">
+              {/* Enviar artigo */}
+
               <div className="btn-container">
                 <button
+                  type="submit"
+                  onClick={() => deleteCount()}
                   className="btn-green"
-                  onClick={() => setNewRegistration(true)}
                 >
-                  Criar nova conta
+                  <Link style={{ color: "white" }} to="/articles">
+                    Enviar Artigo
+                  </Link>
                 </button>
               </div>
+
+              {/* "/forum" */}
+              <div className="btn-container ">
+                <button type="submit" className="btn-green">
+                  <Link style={{ color: "white" }} to="/forum">
+                    Entrar no Fórum
+                  </Link>
+                </button>
+              </div>
+
+              {/* Preencher Cadastro */}
+              <div className="btn-container">
+                <button
+                  className="btn-black "
+                  onClick={() => setNewRegistration(true)}
+                >
+                  Cadastrar Meu Perfil
+                </button>
+              </div>
+
+              {/* Editar Conta */}
               <div className="btn-container">
                 <Link to="/doctor/editar-cadastro">
-                  <button className="btn-green">Editar conta</button>
+                  <button className="btn-black">Editar Meu Perfil</button>
                 </Link>
+              </div>
+              {/* Excluir conta */}
+
+              <div className="btn-container">
+                <button
+                  type="submit"
+                  onClick={() => deleteCount()}
+                  className="btn-black"
+                >
+                  <Link style={{ color: "white" }} to="/">
+                    Excluir conta
+                  </Link>
+                </button>
               </div>
             </div>
           )}

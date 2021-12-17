@@ -51,14 +51,14 @@ body {
   align-items: center;
 }
 
-/* buttons */
+/* button green */
 
 .btn-green {
   background-color: hsl(172, 100%, 25%);
   box-shadow: 0 0 5px 0 #4d4c4c;
   color: white;
   padding: .5em;
-  width: 180px;
+  width: 200px;
   font-weight: 700;
   font-family: inherit;
   border-radius: 5px;
@@ -67,8 +67,61 @@ body {
   text-align: center;
 }
 
+.btn-green a {
+  text-decoration: none;
+}
+
 .btn-green:hover, .btn-green:focus {
   background-color: hsl(172, 100%, 35%);
+  color: black;
+  cursor: pointer;
+}
+
+/* button black */
+
+.btn-black {
+  background-color: #1F232B;
+  box-shadow: 0 0 5px 0 #4d4c4c;
+  color: white;
+  padding: .5em;
+  width: 200px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px;
+  text-align: center;
+}
+.btn-black a {
+  text-decoration: none;
+}
+
+.btn-black:hover, .btn-black:focus {
+  background-color: hsl(172, 100%, 35%);
+  color: black;
+  cursor: pointer;
+}
+
+/* button pink */
+.btn-pink {
+  background-color: #9E308D;
+  box-shadow: 0 0 5px 0 #4d4c4c;
+  color: white;
+  padding: .5em;
+  width: 200px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px;
+  text-align: center;
+}
+.btn-pink a {
+  text-decoration: none;
+}
+
+.btn-pink:hover, .btn-pink:focus {
+  background-color: #9E308D;
   color: black;
   cursor: pointer;
 }
@@ -93,6 +146,30 @@ svg {
   justify-content: center;
 }
 
+/* button daily */
+.btn-daily {
+  background-color: #5c1d52;
+  box-shadow: 0 0 5px 0 #4d4c4c;
+  color: white;
+  padding: .5em;
+  width: 200px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 95px;
+  text-decoration: none;
+  margin: 10px;
+  text-align: center;
+}
+.btn-daily a {
+  text-decoration: none;
+}
+
+.btn-daily:hover, .btn-daily:focus {
+  background-color: #9E308D;
+  color: black;
+  cursor: pointer;
+}
+
 .cadastro a {
   display: flex;
   align-items: center;
@@ -112,19 +189,24 @@ svg {
   max-height: 100px !important;
 }
 
+.questions-container p {
+  margin-top: 20px;
+}
 .doctor-cards {
   box-shadow: 0 0 3px 0 #727171;
   border: 1px solid #4e5157;
   margin: 15px;
   padding: 10px;
 }
+
+.navbar-margin {
+  margin-left: 10px;
+}
 /*.forum-tags {
   /* display: flex; */
 
 /*
 
-font-family: 'Roboto', sans-serif;
-*/
 
 /*doctor tab*/
 

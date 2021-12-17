@@ -64,36 +64,38 @@
 // //               </>
 // //             ) : null}
 
-//             {!loggedInUser.user.name ? (
-//               <>
-//                 <li className="nav-item border-start ms-2 ps-2">
-//                   <Link to="/login" className="nav-link">
-//                     Login
-//                   </Link>
-//                 </li>
-//                 <li className="nav-item">
-//                   <Link to="/signup" className="nav-link">
-//                     Cadastrar
-//                   </Link>
-//                 </li>
-//               </>
-//             ) : (
-//               <>
-//                 <div className="dropdown ms-3 ps-3 border-start">
-//                   <span
-//                     className="nav-link dropdown-toggle me-3"
-//                     type="button"
-//                     id="dropdownMenuButton2"
-//                     data-bs-toggle="dropdown"
-//                     aria-expanded="false"
-//                   >
-//                     Olá, {loggedInUser.user.name}
-//                   </span>
-//                   <ul
-//                     className="dropdown-menu dropdown-menu-dark"
-//                     aria-labelledby="dropdownMenuButton2"
-//                   >
-//                     <li>
+            // {!loggedInUser.user.name ? (
+            //   <>
+            //     <li className="nav-item border-start ms-2 ps-2">
+            //       <Link to="/login" className="nav-link">
+            //         Login
+            //       </Link>
+            //     </li>
+            //     <li className="nav-item">
+            //       <Link to="/signup" className="nav-link">
+            //         Cadastrar
+            //       </Link>
+            //     </li>
+            //   </>
+            // ) : (
+            //   <>
+            //     <div className="dropdown ms-3 ps-3 border-start">
+            //       <span
+            //         className="nav-link dropdown-toggle me-3"
+            //         type="button"
+            //         id="dropdownMenuButton2"
+            //         data-bs-toggle="dropdown"
+            //         aria-expanded="false"
+            //       >
+            //         Olá, {loggedInUser.user.name}
+            //       </span>
+            //       <ul
+            //         className="dropdown-menu dropdown-menu-dark"
+            //         aria-labelledby="dropdownMenuButton2"
+            //       >
+            //         <li>
+            //         )}
+
 //                       {loggedInUser.role === "PATIENT" ? (
 //                         <Link to="/patient-info" className="dropdown-item">
 //                           Meu Perfil de Paciente
@@ -105,13 +107,13 @@
 //                       )}
 //                     </li>
 //                     <li>
-//                       <Link
-//                         to="/login"
-//                         onClick={logout}
-//                         className="dropdown-item"
-//                       >
-//                         Logout
-//                       </Link>
+                    //   <Link
+                    //     to="/login"
+                    //     onClick={logout}
+                    //     className="dropdown-item"
+                    //   >
+                    //     Logout
+                    //   </Link>
 //                     </li>
 //                   </ul>
 //                 </div>

@@ -20,7 +20,6 @@ import DoctorTab from "../pages/DoctorTab";
 import PatientsInfo from "../pages/PatientsData";
 import DoctorDetails from "../pages/DoctorDetails";
 import PatientEditProfile from "../pages/PatientEditProfile";
-
 import SpecialistsPage from "../pages/SpecialistsPage";
 
 function App() {
@@ -39,7 +38,6 @@ function App() {
     <AuthContextComponent>
       <div className="min-vh-100">
         <Navbar />
-
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route
@@ -82,11 +80,9 @@ function App() {
           <Route path="/doctor-tab" element={<DoctorTab />} />
           <Route path="/patients-info" element={<PatientsInfo />} />
 
-
           <Route path="/doctor-details" element={<DoctorDetails />} />
 
           <Route path="/doctor-details/:id" element={<DoctorDetails />} />
-
         </Routes>
       </div>
     </AuthContextComponent>

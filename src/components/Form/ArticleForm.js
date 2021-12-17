@@ -28,76 +28,84 @@ function ArticleForm(props) {
       className="width-form d-flex flex-column"
       style={{ minWidth: "60%" }}
     >
-      {/* Título do Artigo */}
-      <InputTexto
-        label="Título do Artigo"
-        name="title"
-        onChange={props.handleChange}
-        value={props.value}
-        required={true}
-        maxlength="200"
-      />
+      <h2 className="text-center h4 mt-4 text-top-pag">
+        <strong>Enviar um artigo</strong>
+      </h2>
+      <div
+        className="container questions-container mb-3 resg-pag-container"
+        style={{ maxWidth: "800px" }}
+      >
+        {/* Título do Artigo */}
+        <InputTexto
+          label="Título do Artigo"
+          name="title"
+          onChange={props.handleChange}
+          value={props.value}
+          required={true}
+          maxlength="200"
+        />
 
-      {/* Autores */}
-      <InputTexto
-        label="Autores do Artigo"
-        name="authors"
-        onChange={props.handleChange}
-        value={props.value}
-        required={true}
-      />
-      {/* Ano de Publicação */}
-      <InputTexto
-        label="Ano de Publicação: "
-        name="yearPublished"
-        onChange={props.handleChange}
-        value={props.value}
-        required={true}
-      />
+        {/* Autores */}
+        <InputTexto
+          label="Autores do Artigo"
+          name="authors"
+          onChange={props.handleChange}
+          value={props.value}
+          required={true}
+        />
+        {/* Ano de Publicação */}
+        <InputTexto
+          label="Ano de Publicação: "
+          name="yearPublished"
+          onChange={props.handleChange}
+          value={props.value}
+          required={true}
+        />
 
-      {/* Link */}
-      <InputTexto
-        label="Compartilhar um link:"
-        name="websiteLink"
-        onChange={props.handleChange}
-        value={props.value}
-        required={true}
-      />
+        {/* Link */}
+        <InputTexto
+          label="Compartilhar um link:"
+          name="websiteLink"
+          onChange={props.handleChange}
+          value={props.value}
+          required={true}
+        />
 
-      {/* Tags */}
-      <p>Tema do Artigo:</p>
-      <div className="forum-tags">
-        {tagsArticle.map((currentTag) => {
-          return (
-            <>
-              <InputCheckbox
-                label={currentTag}
-                id={currentTag}
-                name="tags"
-                onChange={(event) =>
-                  props.setFormData({
-                    ...props.formData,
-                    [event.target.name]: event.target.checked,
-                  })
-                }
-                required={true}
-              ></InputCheckbox>
-            </>
-          );
-        })}
-      </div>
+        {/* Tags */}
+        <p>Tema do Artigo:</p>
+        <div className="forum-tags">
+          {tagsArticle.map((currentTag) => {
+            return (
+              <>
+                <InputCheckbox
+                  label={currentTag}
+                  id={currentTag}
+                  name="tags"
+                  onChange={(event) =>
+                    props.setFormData({
+                      ...props.formData,
+                      [event.target.name]: event.target.checked,
+                    })
+                  }
+                  required={true}
+                ></InputCheckbox>
+              </>
+            );
+          })}
+        </div>
 
-      <div className="width-max btn-container">
-        <button
-          className="btn-green btn-middle"
-          disabled={props.isSending}
-          type="submit"
-        >
-          {props.isSending ? (
-            <span role="status" aria-hidden="true"></span>
-          ) : null}
-          {props.textBtn}
-        </button>
+        <div className="width-max btn-container">
+          <button
+            className="btn-green btn-middle"
+            disabled={props.isSending}
+            type="submit"
+          >
+            {props.isSending ? (
+              <span role="status" aria-hidden="true"></span>
+            ) : null}
+            Enviar
+          </button>
+        </div>
       </div>
     </form>
   );
