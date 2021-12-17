@@ -33,10 +33,11 @@ function Navbar(props) {
             </>
           ) : (
             <>
-              <div className="nav-item ms-3 ps-3 border-start">
-                <span> Olá, {loggedInUser.user.name}</span>
+              <div className="nav-link link-success">
+                <span>
+                  <strong>Olá, {loggedInUser.user.name}</strong>{" "}
+                </span>
               </div>
-
               {loggedInUser.user.role === "PATIENT" ? (
                 <>
                   <Link to="/patient-info" className="nav-link link-secondary">

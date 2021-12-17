@@ -113,13 +113,19 @@ function DoctorProfile(props) {
               {/* Enviar artigo */}
 
               <div className="btn-container">
-                <button
-                  type="submit"
-                  onClick={() => deleteCount()}
-                  className="btn-green"
-                >
+                <button type="submit" className="btn-green">
                   <Link style={{ color: "white" }} to="/articles">
                     Enviar Artigo
+                  </Link>
+                </button>
+              </div>
+
+              {/* Base de Dados de Pacientes */}
+
+              <div className="btn-container">
+                <button type="submit" className="btn-green">
+                  <Link style={{ color: "white" }} to="/patient-info/patients">
+                    Base de Dados
                   </Link>
                 </button>
               </div>
@@ -143,12 +149,6 @@ function DoctorProfile(props) {
                 </button>
               </div>
 
-              {/* Editar Conta */}
-              <div className="btn-container">
-                <Link to="/doctor/editar-cadastro">
-                  <button className="btn-black">Editar Meu Perfil</button>
-                </Link>
-              </div>
               {/* Excluir conta */}
 
               <div className="btn-container">

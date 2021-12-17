@@ -72,17 +72,21 @@ function Forum(props) {
         <strong>Fórum</strong>
       </h2>
       <div
-        className="container mt-3 resg-pag-container"
+        className="container mt-4 resg-pag-container"
         style={{ maxWidth: "800px" }}
       >
         {response.map(
           (currentPost) => {
             return (
-              <div key={currentPost._id}>
-                <p>{currentPost.text}</p>
+              <div className="doctor-cards text-center" key={currentPost._id}>
+                <p>
+                  <strong>{currentPost.text}</strong>
+                </p>
                 <a href={currentPost.websiteLink}>Link enviado</a>
                 <img src={currentPost.pictures} />
-                <p>{currentPost.tags}</p>
+                <p>
+                  <em>{currentPost.tags}</em>
+                </p>
               </div>
             );
           }

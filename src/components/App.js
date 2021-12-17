@@ -20,6 +20,7 @@ import PatientEditProfile from "../pages/PatientEditProfile";
 import SpecialistsPage from "../pages/SpecialistsPage";
 import DoctorDetails from "../pages/DoctorDetails";
 import React from "react";
+import PatientsData from "../pages/PatientsData";
 import Button from "../components/Button";
 // import ForumForm from "../components/Form/ForumForm";
 // import DoctorTab from "../pages/DoctorTab";
@@ -39,8 +40,6 @@ function App() {
   return (
     <AuthContextComponent>
       <div className="min-vh-100">
-
-        
         <Navbar />
         <Routes>
           <Route path="/" element={<WelcomePage />} />
@@ -80,9 +79,9 @@ function App() {
           <Route path="/forum" element={<Forum />} />
           <Route path="/articles" element={<Article />} />
           <Route path="/doctor-info/doctors" element={<SpecialistsPage />} />
-          {/* <Route path="/forum/create" element={<Forum />} /> */}
-          {/* <Route path="/doctor-tab" element={<DoctorTab />} />
-          <Route path="/patients-info" element={<PatientsInfo />} /> */}
+          <Route path="/forum/create" element={<Forum />} />
+          {/* <Route path="/doctor-tab" element={<DoctorTab />} /> */}
+          <Route path="/patient-info/patients" element={<PatientsData />} />
 
           <Route path="/doctor-details" element={<DoctorDetails />} />
           <Route path="/doctor-details/:id" element={<DoctorDetails />} />
