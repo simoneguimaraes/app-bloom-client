@@ -90,19 +90,11 @@ function PatientProfile() {
           </div>
         ) : (
           <div className="d-flex flex-column justify-content-center mt-4">
-            {/* Preencher Cadastro */}
-            <div className="btn-container">
-              <button
-                className="btn-pink"
-                onClick={() => setNewRegistration(true)}
-              >
-                Preencher Meu Perfil
-              </button>
-            </div>
+            
 
             {/* "/daily" */}
             <div className="btn-container">
-              <button type="submit" className="btn-pink">
+              <button type="submit" className=" btn-daily">
                 <Link style={{ color: "white" }} to="/daily">
                   Pesquisa Diária
                 </Link>
@@ -123,6 +115,16 @@ function PatientProfile() {
                 <Link style={{ color: "white" }} to="/doctor-info/doctors">
                   Ver os Especialistas
                 </Link>
+              </button>
+            </div>
+
+            {/* Preencher Cadastro */}
+            <div className="btn-container">
+              <button
+                className="btn-pink"
+                onClick={() => setNewRegistration(true)}
+              >
+                Cadastrar Meu Perfil
               </button>
             </div>
 
