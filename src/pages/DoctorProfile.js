@@ -136,7 +136,7 @@ function DoctorProfile(props) {
               {/* Preencher Cadastro */}
               <div className="btn-container">
                 <button
-                  className="btn-black "
+                  className="btn-green "
                   onClick={() => setNewRegistration(true)}
                 >
                   Cadastrar Meu Perfil
