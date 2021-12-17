@@ -77,6 +77,16 @@ function PatientProfile() {
           </div>
         ) : (
           <div className="d-flex flex-column justify-content-center mt-4">
+            {/* "/daily" */}
+            <div className="btn-container">
+              <button type="submit" className="btn-pink">
+                <Link style={{ color: "white" }} to="/daily">
+                  Pesquisa diária
+                </Link>
+              </button>
+            </div>
+
+            {/* Preencher Cadastro */}
             <div className="btn-container">
               <button
                 className="btn-green"
@@ -85,6 +95,8 @@ function PatientProfile() {
                 Preencher Meu Perfil
               </button>
             </div>
+
+            {/* Editar Cadastro */}
             <div className="btn-container">
               <button type="submit" className="btn-green">
                 <Link style={{ color: "white" }} to="/patient-info/update">
@@ -107,6 +119,15 @@ function PatientProfile() {
               <button type="submit" className="btn-green">
                 <Link style={{ color: "white" }} to="/doctor-info/doctors">
                   Ver os Especialistas
+                </Link>
+              </button>
+            </div>
+
+            {/* Excluir conta */}
+            <div className="btn-container">
+              <button type="submit" className="btn-black">
+                <Link style={{ color: "white" }} to="/">
+                  Excluir conta
                 </Link>
               </button>
             </div>

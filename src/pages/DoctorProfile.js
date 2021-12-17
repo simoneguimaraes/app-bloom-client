@@ -110,6 +110,15 @@ function DoctorProfile(props) {
                   <button className="btn-green">Editar conta</button>
                 </Link>
               </div>
+
+              {/* Excluir conta */}
+            <div className="btn-container">
+              <button type="submit" className="btn-black">
+                <Link style={{ color: "white" }} to="/">
+                  Excluir conta
+                </Link>
+              </button>
+            </div>
             </div>
           )}
         </div>
