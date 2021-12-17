@@ -4,65 +4,65 @@
 // import { AuthContext } from "../../contexts/authContext";
 // import "../../assets/styles/index.css";
 
-// function Navbar(props) {
-//   const [userName, setUserName] = useState("");
-//   const { logout, loggedInUser } = useContext(AuthContext);
-//   const params = useLocation();
+// // function Navbar(props) {
+// //   const [userName, setUserName] = useState("");
+// //   const { logout, loggedInUser } = useContext(AuthContext);
+// //   const params = useLocation();
 
-//   // const json = localStorage.getItem("loggedInUser");
-//   // const storedUser = JSON.parse(json || '""');
+// //   // const json = localStorage.getItem("loggedInUser");
+// //   // const storedUser = JSON.parse(json || '""');
 
-//   // useEffect(() => {
-//   //   if (storedUser !== "") {
-//   //     setUserName(storedUser.user.name.split(" ")[0]);
-//   //   }
-//   // }, [storedUser, params]);
-//   return (
-//     <nav className="navbar navbar-expand-lg navbar-light bgColor">
-//       <div className="container-fluid">
-//         <h2
-//           className={`${
-//             props.pag === "Home" ? "d-none" : null
-//           } navbar-brand text-white navbar-toggler border-0 mb-0`}
-//         >
-//           {props.pag}
-//         </h2>
-//         {/* <p className="m-auto h5 text-light">Bloom</p> */}
-//         <button
-//           className="navbar-toggler"
-//           type="button"
-//           data-bs-toggle="collapse"
-//           data-bs-target="#navbarNav"
-//           // aria-controls="navbarNav"
-//           // aria-expanded="false"
-//           // aria-label="Toggle navigation"
-//         >
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-//         <div
-//           className="collapse navbar-collapse d-flex justify-content-end "
-//           id="navbarNav"
-//         >
-//           <ul className="navbar-nav">
-//             <li className="nav-item">
-//               <Link to="/" className="nav-link active">
-//                 Home
-//               </Link>
-//             </li>
-//             {loggedInUser.user.name ? (
-//               <>
-//                 <li className="nav-item">
-//                   <Link to="/login" className="nav-link">
-//                     Login
-//                   </Link>
-//                 </li>
-//                 <li className="nav-item">
-//                   <Link to="/signup" className="nav-link">
-//                     Cadastrar
-//                   </Link>
-//                 </li>
-//               </>
-//             ) : null}
+// //   // useEffect(() => {
+// //   //   if (storedUser !== "") {
+// //   //     setUserName(storedUser.user.name.split(" ")[0]);
+// //   //   }
+// //   // }, [storedUser, params]);
+// //   return (
+// //     <nav className="navbar navbar-expand-lg navbar-light bgColor">
+// //       <div className="container-fluid">
+// //         <h2
+// //           className={`${
+// //             props.pag === "Home" ? "d-none" : null
+// //           } navbar-brand text-white navbar-toggler border-0 mb-0`}
+// //         >
+// //           {props.pag}
+// //         </h2>
+// //         {/* <p className="m-auto h5 text-light">Bloom</p> */}
+// //         <button
+// //           className="navbar-toggler"
+// //           type="button"
+// //           data-bs-toggle="collapse"
+// //           data-bs-target="#navbarNav"
+// //           // aria-controls="navbarNav"
+// //           // aria-expanded="false"
+// //           // aria-label="Toggle navigation"
+// //         >
+// //           <span className="navbar-toggler-icon"></span>
+// //         </button>
+// //         <div
+// //           className="collapse navbar-collapse d-flex justify-content-end "
+// //           id="navbarNav"
+// //         >
+// //           <ul className="navbar-nav">
+// //             <li className="nav-item">
+// //               <Link to="/" className="nav-link active">
+// //                 Home
+// //               </Link>
+// //             </li>
+// //             {loggedInUser.user.name ? (
+// //               <>
+// //                 <li className="nav-item">
+// //                   <Link to="/login" className="nav-link">
+// //                     Login
+// //                   </Link>
+// //                 </li>
+// //                 <li className="nav-item">
+// //                   <Link to="/signup" className="nav-link">
+// //                     Cadastrar
+// //                   </Link>
+// //                 </li>
+// //               </>
+// //             ) : null}
 
 //             {!loggedInUser.user.name ? (
 //               <>
@@ -117,11 +117,11 @@
 //                 </div>
 //               </>
 //             )}
-//           </ul>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// }
+// //           </ul>
+// //         </div>
+// //       </div>
+// //     </nav>
+// //   );
+// // }
 
-// export default Navbar;
+// // export default Navbar;

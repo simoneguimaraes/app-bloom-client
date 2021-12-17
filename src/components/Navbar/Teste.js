@@ -29,13 +29,22 @@ function Navbar(props) {
                   Login
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item link-white">
                 <Link to="/signup" className="nav-link link-secondary">
                   Cadastrar
                 </Link>
               </li>
             </>
           ) : null}
+          {loggedInUser.user.role === "PATIENT" ? (
+            <Link to="/patient-info" className="nav-link link-secondary">
+              Meu Perfil de Paciente
+            </Link>
+          ) : (
+            <Link to="/doctor-info" className="nav-link link-secondary">
+              Meu Perfil de Médico
+            </Link>
+          )}
         </div>
       </div>
       <nav class="navbar navbar-dark bg-dark">
