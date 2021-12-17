@@ -11,6 +11,9 @@ function Navbar(props) {
     <>
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
+          {/* 
+        class="navbar navbar-light"
+        style={{ backgroundColor: "hsl(0, 27%, 80%)" }} */}
           <Link to="/" className="nav-link link-secondary active">
             Home
           </Link>
@@ -77,7 +80,10 @@ function Navbar(props) {
           )}
         </div>
       </div>
-      <nav class="navbar navbar-dark bg-dark">
+      <nav
+        class="navbar navbar-light"
+        style={{ backgroundColor: "hsl(0, 27%, 80%)" }}
+      >
         <div class="container-fluid">
           <button
             class="navbar-toggler"

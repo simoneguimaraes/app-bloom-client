@@ -4,6 +4,16 @@ import { Link } from "react-router-dom";
 
 function SpecialistsPage() {
   const [doctors, setDoctors] = useState([]);
+  const [doctorData, setDoctorData] = useState({
+    specialty: "",
+    crmDoctor: 0,
+    prescription: "",
+    streetAddress: "",
+    city: "",
+    state: "",
+    phoneNumber: "",
+    tags: [],
+  });
 
   useEffect(() => {
     async function fetchDoctors() {
@@ -42,7 +52,9 @@ function SpecialistsPage() {
               Estado: <span>{currentDoctor.state}</span>
             </p>
 
-            <Link to={`/doctor-details/${currentDoctor._id}`}>Detalhes do médico</Link>
+            <Link to={`/doctor-details/${currentDoctor._id}`}>
+              Detalhes do médico
+            </Link>
           </div>
         );
       })}

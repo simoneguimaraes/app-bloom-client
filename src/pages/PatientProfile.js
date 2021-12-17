@@ -43,16 +43,14 @@ function PatientProfile() {
     }
   }
 
-  function deleteCount() {
-    async function deleteUser() {
-      try {
-        api.delete("/userId");
-        setUserDeleted(true);
-      } catch (err) {
-        console.error(err);
-      }
+  async function deleteCount() {
+    try {
+      api.delete("/profile/delete");
+      navigate("/");
+      setUserDeleted(true);
+    } catch (err) {
+      console.error(err);
     }
-    deleteUser();
   }
 
   return (
@@ -90,8 +88,6 @@ function PatientProfile() {
           </div>
         ) : (
           <div className="d-flex flex-column justify-content-center mt-4">
-            
-
             {/* "/daily" */}
             <div className="btn-container">
               <button type="submit" className=" btn-daily">
@@ -140,14 +136,8 @@ function PatientProfile() {
             {/* Excluir conta */}
 
             <div className="btn-container">
-              <button
-                type="submit"
-                onClick={() => deleteCount()}
-                className="btn-black"
-              >
-                <Link style={{ color: "white" }} to="/">
-                  Excluir conta
-                </Link>
+              <button type="button" onClick={deleteCount} className="btn-black">
+                Excluir conta
               </button>
             </div>
           </div>
