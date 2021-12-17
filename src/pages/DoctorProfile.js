@@ -112,18 +112,42 @@ function DoctorProfile(props) {
             <div className="d-flex flex-column justify-content-center mt-4">
               <div className="btn-container">
                 <button
-                  className="btn-green"
+                  className="btn-pink"
                   onClick={() => setNewRegistration(true)}
                 >
                   Preencher Meu Perfil
                 </button>
               </div>
+
+              {/* Enviar artigo */}
+
               <div className="btn-container">
-                <Link to="/doctor/editar-cadastro">
-                  <button className="btn-green">Editar conta</button>
-                </Link>
+                <button
+                  type="submit"
+                  onClick={() => deleteCount()}
+                  className="btn-pink"
+                >
+                  <Link style={{ color: "white" }} to="/articles">
+                    Enviar Artigo
+                  </Link>
+                </button>
               </div>
 
+              {/* "/forum" */}
+              <div className="btn-container ">
+                <button type="submit" className="btn-pink">
+                  <Link style={{ color: "white" }} to="/forum">
+                    Entrar no Fórum
+                  </Link>
+                </button>
+              </div>
+
+              {/* Editar Conta */}
+              <div className="btn-container">
+                <Link to="/doctor/editar-cadastro">
+                  <button className="btn-black">Editar Meu Perfil</button>
+                </Link>
+              </div>
               {/* Excluir conta */}
 
               <div className="btn-container">
