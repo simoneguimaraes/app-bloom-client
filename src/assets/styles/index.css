@@ -138,3 +138,10 @@ font-family: 'Roboto', sans-serif;
 .container-buttom-dt {
   width: 200px; 
 }
+
+.doctor-cards {
+  box-shadow: 0 0 3px 0 #727171;
+  border: 1px solid #4E5157;
+  margin: 15px;
+  padding: 10px;
+}

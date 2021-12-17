@@ -22,7 +22,7 @@ function Navbar(props) {
           <Link to="/" className="nav-link link-secondary active">
             Home
           </Link>
-          {loggedInUser.user.name ? (
+          {loggedInUser.user ? (
             <>
               <li className="nav-item">
                 <Link to="/login" className="nav-link link-secondary">
